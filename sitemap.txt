@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.aerodairy.co.ke/</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/programs.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/admission.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/contact.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/sitemap.html</loc></url>
+</urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core Pages -->
+  <url><loc>https://www.aerodairy.co.ke/</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/about.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/contact.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/admission.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/programs.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/sitemap.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/requirements.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/purpose.html</loc></url>
+
+  <!-- Program Pages -->
+  <url><loc>https://www.aerodairy.co.ke/dairy-farming.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/milk-processing.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/animal-health.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/sustainability.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/equipment-technology.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/feed-nutrition.html</loc></url>
+
+  <!-- Animal Health Detailed Modules -->
+  <url><loc>https://www.aerodairy.co.ke/veterinary.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/vaccination.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/hygiene.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/nutrition.html</loc></url>
+
+  <!-- Milk Quality & Problem Solved -->
+  <url><loc>https://www.aerodairy.co.ke/milkquality.html</loc></url>
+
+  <!-- Financial and Resource Pages -->
+  <url><loc>https://www.aerodairy.co.ke/budget-financial.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/milk-preservation.html</loc></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.aerodairy.co.ke/privacy.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/terms.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/faqs.html</loc></url>
+
+  <!-- Admin & Reports -->
+  <url><loc>https://www.aerodairy.co.ke/dashboard.html</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/report_summary.php</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/report_engagement.php</loc></url>
+  <url><loc>https://www.aerodairy.co.ke/news-events.html</loc></url>
+
+</urlset>

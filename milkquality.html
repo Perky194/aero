@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Increased Milk Production – AERO DAIRY</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green: #02a302;
+      --green-dark: #014d00;
+      --purple: #5e2b97;
+      --purple-dark: #3b1d60;
+      --text-light: #e0ffe0;
+      --panel-bg: rgba(20, 10, 30, 0.9);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-light);
+      background: linear-gradient(135deg, var(--purple-dark), var(--green-dark));
+      display: flex;
+      gap: 30px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 30px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      pointer-events: none;
+      z-index: -1;
+    }
+    aside {
+      width: 280px;
+      background: var(--purple-dark);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      color: #d8ffe8;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    aside h3 {
+      margin-bottom: 15px;
+      color: var(--green);
+      text-shadow: 0 0 6px var(--green);
+      font-size: 22px;
+    }
+    aside h3 a { color: var(--green); text-decoration: none; }
+    aside h3 a:hover, aside ul li a:hover { text-decoration: underline; }
+    aside ul {
+      list-style: none;
+      margin-bottom: 25px;
+      flex-grow: 1;
+      padding-left: 0;
+    }
+    aside ul li { margin-bottom: 12px; }
+    aside ul li a {
+      color: #c6fdd3;
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    aside ul li a:focus {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+    }
+    #backToGoalsBtn {
+      background: var(--green);
+      color: var(--purple-dark);
+      border: none;
+      padding: 10px 20px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(2,163,2,0.7);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #backToGoalsBtn:hover {
+      background: var(--green-dark);
+      color: #c6fdd3;
+      box-shadow: 0 3px 15px var(--green-dark);
+    }
+    main {
+      flex-grow: 1;
+      max-width: 800px;
+      background: var(--panel-bg);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+      animation: fadeIn 1.4s ease;
+    }
+    main h1 {
+      color: var(--green);
+      font-size: 32px;
+      text-shadow: 0 0 6px var(--green);
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      background: var(--green);
+      color: var(--purple-dark);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,128,0,0.7);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .back-link:hover {
+      background: var(--green-dark);
+      color: #c6fdd3;
+      box-shadow: 0 2px 10px var(--green-dark);
+    }
+    section { margin-bottom: 30px; }
+    h2 { color: var(--green); margin-bottom: 15px; text-shadow: 0 0 6px var(--green); }
+    h3 { color: var(--green); margin-bottom: 12px; text-shadow: 0 0 6px var(--green); }
+    p, ul {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #c6fdd3;
+      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+    }
+    ul.steps {
+      list-style-type: decimal;
+      margin-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    [id] { scroll-margin-top: 100px; }
+    @media (max-width: 900px) {
+      body { flex-direction: column; padding: 20px; }
+      aside { width: 100%; margin-bottom: 30px; }
+      main { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside aria-label="Page Navigation">
+    <h3><a href="goals.html">Explore Goals</a></h3>
+    <ul>
+      <li><a href="increasedmilk.html" aria-current="page" tabindex="-1">Increased Milk Production</a></li>
+      <li><a href="milkquality.html">Milk Quality</a></li>
+      <li><a href="marketaccess.html">Market Access & Competitiveness</a></li>
+      <li><a href="regulatorycompliance.html">Regulatory Compliance</a></li>
+    </ul>
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#why-increase">Why Increase Production?</a></li>
+      <li><a href="#importance">Importance</a></li>
+      <li><a href="#steps-feed">Feeding Procedures</a></li>
+      <li><a href="#health-hygiene">Health & Hygiene</a></li>
+      <li><a href="#monitoring">Monitoring & Adjustment</a></li>
+    </ul>
+    <button id="backToGoalsBtn">
+      <i class="fa fa-arrow-left"></i> Back to Goals
+    </button>
+  </aside>
+
+  <main>
+    <h1><i class="fa-solid fa-bullseye"></i> Increased Milk Production</h1>
+
+    <a href="goals.html" class="back-link">
+      <i class="fa fa-arrow-left"></i> Back to Goals
+    </a>
+
+    <section id="why-increase">
+      <h2>Why Increase Milk Production?</h2>
+      <p>Boosting milk output strengthens farmer income, ensures food security, and enables investments in improved feed, breeding, and infrastructure.</p>
+    </section>
+
+    <section id="importance">
+      <h2>Importance</h2>
+      <ul>
+        <li>Supports household nutrition and income.</li>
+        <li>Enhances ability to reinvest in farm productivity.</li>
+        <li>Supplies consistent volumes for processors, boosting market reputation.</li>
+      </ul>
+    </section>
+
+    <section id="steps-feed">
+      <h2>Feeding Procedures</h2>
+      <ul class="steps">
+        <li><strong>Balanced Diet:</strong> Provide good-quality Napier, Desmodium, plus concentrates for energy and protein.</li>
+        <li><strong>Feeding Frequency:</strong> Offer three balanced feeds per day – before milking, midday, and after milking.</li>
+        <li><strong>Seasonal Storage:</strong> Store silage or hay ahead of dry season for continuous quality feed.</li>
+        <li><strong>Water & Minerals:</strong> Provide fresh water and mineral blocks (selenium, zinc, phosphorus) daily.</li>
+      </ul>
+    </section>
+
+    <section id="health-hygiene">
+      <h2>Health & Hygiene</h2>
+      <ul class="steps">
+        <li><strong>Deworming & Tick Control:</strong> Deworm monthly and apply acaricides regularly.</li>
+        <li><strong>Mastitis Prevention:</strong> Use teat dips after milking and check for udder health.</li>
+        <li><strong>Clean Environment:</strong> Provide dry clean bedding and proper waste drainage.</li>
+        <li><strong>Artificial Insemination:</strong> Train farmers to detect estrus and use proven genetics.</li>
+      </ul>
+    </section>
+
+    <section id="monitoring">
+      <h2>Monitoring & Adjustment</h2>
+      <ul class="steps">
+        <li><strong>Milk Recording:</strong> Track daily milk volumes per cow.</li>
+        <li><strong>Body Condition:</strong> Check and record condition monthly.</li>
+        <li><strong>Feed Trials:</strong> Adjust rations if yields stall or drop.</li>
+        <li><strong>Farmer Training:</strong> Hold monthly field sessions and peer reviews.</li>
+      </ul>
+    </section>
+	
+	<section>
+  <div style="margin-top: 40px; display: flex; justify-content: center;">
+    <button onclick="window.location.href='goals.html'" 
+            style="background: #5e2b97; color: #fff; border: none; padding: 12px 20px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: background 0.3s;">
+      <i class="fa fa-arrow-left"></i> Back to Problem Solved
+    </button>
+  </div>
+</section>
+
+
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <script>
+    document.getElementById('backToGoalsBtn').addEventListener('click', () => {
+      window.location.href = 'goals.html';
+    });
+  </script>
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+    <!-- BACK TO PROBLEM SOLVED BUTTON AT THE BOTTOM -->
+  <div style="margin-top: 40px; display: flex; justify-content: center;">
+    <button onclick="window.location.href='goals.html'" 
+            style="background: #5e2b97; color: #fff; border: none; padding: 12px 20px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: background 0.3s;">
+      <i class="fa fa-arrow-left"></i> back to goals
+    </button>
+  </div>
+
+</body>
+</html>

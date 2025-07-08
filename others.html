@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Other Initiatives – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --green: #1a6c2e;
+      --purple: #6a0dad;
+      --light: #f4fdf5;
+      --white: #fff;
+      --dark: #111;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+    nav {
+      background: var(--purple);
+      padding: 0.7rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background: var(--white);
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      border-left: 5px solid var(--purple);
+    }
+    main h2 {
+      color: var(--purple);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 6px;
+    }
+    section {
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease;
+    }
+    section h3 {
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      margin-top: auto;
+      background: var(--purple);
+      color: var(--white);
+      padding: 1.2rem;
+      font-size: 0.8rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 150px;
+    }
+    .footer-col h4 {
+      color: #90ee90;
+      margin-bottom: 0.6rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+    .copy {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-globe-africa"></i> Other Initiatives</h1>
+    <p>Beyond the classroom: Our community-centered, scalable, and sustainable innovations</p>
+  </header>
+
+  <nav>
+    <a href="dashboard.php">Home</a>
+    <a href="programs.html">Programs</a>
+    <a href="admission.html">Admissions</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Community Empowerment Programs</h2>
+      <p>
+        AERO DAIRY supports grassroots dairy cooperatives and women's groups with direct training, equipment leasing,
+        and technical advisory services. These initiatives empower smallholders to scale their operations sustainably.
+      </p>
+      <ul>
+        <li>Field-based dairy extension services</li>
+        <li>Women-led milk collection centers</li>
+        <li>Public–private partnerships with county agricultural departments</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Research & Innovation Outreach</h2>
+      <p>
+        We actively collaborate with universities and research institutes to test, implement, and publish modern
+        practices that improve animal welfare, milk yields, and farm sustainability.
+      </p>
+      <p>
+        Recent focus areas include:
+      </p>
+      <ul>
+        <li>Zero-grazing vs open pasture effectiveness trials</li>
+        <li>Probiotic feed additives for disease resistance</li>
+        <li>Blockchain-backed milk traceability systems</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Educational Partnerships</h2>
+      <p>
+        Through joint programs with vocational colleges, we offer certified courses in dairy technology,
+        veterinary assistance, and farm management.
+      </p>
+      <p>
+        Graduates receive certification and internship placement in farms associated with AERO DAIRY.
+      </p>
+    </section>
+
+    <section>
+      <h2>Environmental Sustainability Drives</h2>
+      <p>
+        We champion eco-friendly practices through solar-powered coolers, biogas systems from cow dung,
+        and water recycling units on pilot farms.
+      </p>
+      <ul>
+        <li>Solar milk chillers reduce diesel costs by 60%</li>
+        <li>Waste-to-energy conversion supports green processing</li>
+        <li>Eco-certification for farms adopting 80% green compliance</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+  
+    <!-- Add this inside your <footer> section in others.html -->
+
+<footer>
+  <div class="footer-grid" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 0 1rem;">
+    <!-- Quick Links Column -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="dashboard.php">Home</a></li>
+        <li><a href="report.html">Report</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="permits.html">Permits</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </div>
+
+    <!-- More Links Column -->
+    <div class="footer-col">
+      <h4>More</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Left -->
+    <div class="footer-col">
+      <h4>Socials</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li>Facebook – <strong>@aerodairykenya</strong></li>
+        <li>Twitter – <strong>@aerodairyke</strong></li>
+        <li>Instagram – <strong>@aerodairy_official</strong></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Right -->
+    <div class="footer-col">
+      <h4>&nbsp;</h4> <!-- Empty heading for alignment -->
+      <ul style="list-style: none; padding: 0;">
+        <li>YouTube – <strong>AERO DAIRY</strong></li>
+        <li>WhatsApp – <strong>+254 719 594 705</strong></li>
+        <li>TikTok – <strong>@aerodairy_ke</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copy" style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: #ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Improve Milk Quality – AERO DAIRY</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green: #02a302;
+      --green-dark: #014d00;
+      --purple: #5e2b97;
+      --purple-dark: #3b1d60;
+      --text-light: #e0ffe0;
+      --panel-bg: rgba(20, 10, 30, 0.9);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-light);
+      background: linear-gradient(135deg, var(--purple-dark), var(--green-dark));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main.content-wrapper {
+      flex: 1 0 auto;
+      display: flex;
+      gap: 30px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    header {
+      background: linear-gradient(to right, var(--purple-dark), var(--green-dark));
+      padding: 15px 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+    aside {
+      width: 280px;
+      background-color: var(--purple-dark);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+      color: #d8ffe8;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
+    aside h3 {
+      margin-bottom: 15px;
+      color: var(--green);
+      text-shadow: 0 0 6px var(--green);
+      font-size: 22px;
+    }
+    aside h3 a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    aside h3 a:hover,
+    aside ul li a:hover { text-decoration: underline; }
+    aside ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+    aside ul li {
+      margin-bottom: 12px;
+    }
+    aside ul li a {
+      color: #c6fdd3;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      transition: color 0.3s ease;
+    }
+    aside ul li a:focus {
+      outline: 2px solid var(--green);
+      outline-offset: 3px;
+    }
+    #backToGoalsBtn {
+      background-color: var(--green);
+      color: var(--purple-dark);
+      font-weight: 700;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(2,163,2,0.7);
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #backToGoalsBtn:hover {
+      background-color: var(--green-dark);
+      color: #c6fdd3;
+      box-shadow: 0 3px 15px var(--green-dark);
+    }
+    section {
+      max-width: 800px;
+      background-color: var(--panel-bg);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      animation: fadeIn 1.4s ease;
+      color: #c6fdd3;
+      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+    }
+    h2, h3 { color: var(--green); text-shadow: 0 0 6px var(--green); margin-bottom: 20px; }
+    h2 { font-size: 24px; }
+    p, ul {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    ul.steps { list-style-type: decimal; margin-left: 20px; }
+    ul li { margin-bottom: 10px; }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      background-color: var(--green);
+      color: var(--purple-dark);
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,128,0,0.7);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .back-link:hover {
+      background-color: var(--green-dark);
+      color: #c6fdd3;
+      box-shadow: 0 2px 10px var(--green-dark);
+    }
+    marquee {
+      margin-bottom: 25px;
+      color: var(--green);
+      font-weight: 600;
+      text-shadow: 0 0 8px var(--green);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    [id] { scroll-margin-top: 100px; }
+
+    /* Footer styles */
+    footer {
+      background: linear-gradient(to right, var(--purple), var(--green));
+      color: #fff;
+      padding: 20px 30px;
+      font-size: 14px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+      width: 100%;
+    }
+    footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    footer h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #e0ffe0;
+      text-shadow: 0 0 6px #b3ffb3;
+    }
+    footer a {
+      color: #d8ffe8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+      transition: color 0.3s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: #a3e6a3;
+      outline: none;
+      text-decoration: underline;
+    }
+    footer p {
+      margin-bottom: 6px;
+    }
+    footer .social-icons a {
+      color: #d8ffe8;
+      margin-right: 12px;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+    footer .social-icons a:hover,
+    footer .social-icons a:focus {
+      transform: scale(1.2);
+      color: #a3e6a3;
+      outline: none;
+    }
+    footer .copyright {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #b8ffb8;
+      text-shadow: 0 0 4px #9ede9e;
+    }
+
+    @media (max-width: 900px) {
+      main.content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+      }
+      aside {
+        width: 100%;
+        position: relative;
+        top: auto;
+        align-self: auto;
+        margin-bottom: 30px;
+      }
+      section {
+        max-width: 100%;
+      }
+      footer .footer-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <h1><i class="fa-solid fa-mug-saucer"></i> Improve Milk Quality</h1>
+  </header>
+
+  <main class="content-wrapper">
+    <aside aria-label="Page Navigation">
+      <h3><a href="goals.html">Explore Goals</a></h3>
+      <ul>
+        <li><a href="increased-milk-production.html">Increased Milk Production</a></li>
+        <li><a href="improve-milk-quality.html" aria-current="page">Improve Milk Quality</a></li>
+        <li><a href="market-access-competitiveness.html">Market Access & Competitiveness</a></li>
+        <li><a href="regulatory-compliance.html">Regulatory Compliance</a></li>
+      </ul>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#why-milk-quality">Why Milk Quality is Necessary</a></li>
+        <li><a href="#importance-of-quality">Importance of Milk Quality</a></li>
+        <li><a href="#steps">Steps to Maintain and Improve Milk Quality</a></li>
+        <li><a href="#disease-control">Disease & Contamination Control</a></li>
+        <li><a href="#testing-monitoring">Regular Testing & Monitoring</a></li>
+      </ul>
+      <button id="backToGoalsBtn" aria-label="Back to Goals"><i class="fa fa-arrow-left"></i> Back to Goals</button>
+    </aside>
+
+    <section role="main" tabindex="-1">
+      <a href="problemsolved.html" class="back-link" aria-label="Back to Problems Solved"><i class="fa fa-arrow-left"></i> Back to Problems Solved</a>
+
+      <marquee behavior="scroll" direction="left" aria-label="Scrolling highlights">
+        Increasing Milk Production • Enhancing Milk Quality • Expanding Market Access • Strengthening Regulatory Compliance
+      </marquee>
+
+      <section id="why-milk-quality">
+        <h2>Why Milk Quality is Necessary</h2>
+        <p>Maintaining high milk quality is essential to safeguard public health, enhance shelf life, meet standards, build trust, and unlock better market opportunities for farmers.</p>
+      </section>
+
+      <section id="importance-of-quality">
+        <h2>Importance of Milk Quality</h2>
+        <p>Quality milk reduces spoilage and contamination risks, ensures nutritional value, earns premium prices, and strengthens the dairy industry's sustainability and reputation.</p>
+      </section>
+
+      <section id="steps">
+        <h2>Steps to Maintain and Improve Milk Quality</h2>
+
+        <h3>1. Clean Milking Practices</h3>
+        <ul class="steps">
+          <li><strong>Udder Preparation:</strong> Clean and dry udder using sanitizing wipes or clean warm water.</li>
+          <li><strong>Milker Hygiene:</strong> Wash hands before and during milking.</li>
+          <li><strong>Milking Equipment:</strong> Sterilize machines, buckets, strainers before use.</li>
+          <li><strong>Immediate Cooling:</strong> Cool milk ASAP after milking to slow bacteria.</li>
+        </ul>
+
+        <h3 id="disease-control">2. Proper Storage and Handling</h3>
+        <ul class="steps">
+          <li><strong>Containers:</strong> Use clean, food-grade containers with lids.</li>
+          <li><strong>Refrigeration:</strong> Store at ≤ 4 °C promptly.</li>
+          <li><strong>Transport:</strong> Use insulated carriers to markets.</li>
+          <li><strong>Reduce Holding Time:</strong> Minimize storage before processing.</li>
+        </ul>
+
+        <h3>3. Disease & Contamination Control</h3>
+        <ul class="steps">
+          <li><strong>Mastitis Prevention:</strong> Regular monitoring and prompt treatment.</li>
+          <li><strong>Parasite Control:</strong> Routine deworming and parasite management.</li>
+          <li><strong>Water Quality:</strong> Provide clean drinking water.</li>
+          <li><strong>Feed Safety:</strong> Avoid moldy or contaminated feeds.</li>
+        </ul>
+
+        <h3 id="testing-monitoring">4. Regular Testing & Monitoring</h3>
+        <ul class="steps">
+          <li><strong>Milk Testing:</strong> Check for bacteria, somatic cells, adulterants.</li>
+          <li><strong>Record Keeping:</strong> Track quality metrics and treatments.</li>
+          <li><strong>Training:</strong> Teach best hygiene and handling practices.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div>
+        <h4>Important Links</h4>
+        <a href="faqs.html">FAQs</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+  <script>
+    document.getElementById('backToGoalsBtn').addEventListener('click', () => {
+      window.location.href = 'goals.html';
+    });
+  </script>
+
+</body>
+</html>

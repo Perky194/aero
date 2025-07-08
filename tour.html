@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Platform Tour – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --green: #0b7a0b;
+      --light-green: #9ee79e;
+      --purple: #5e239d;
+      --dark-purple: #3e126d;
+      --text-white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f8f1;
+      color: #222;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 25%;
+      background: var(--purple);
+      color: var(--text-white);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--light-green);
+      padding-bottom: 8px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+
+    .sidebar ul li a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      color: var(--light-green);
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      padding: 30px 40px;
+    }
+
+    .main h1 {
+      color: var(--green);
+      margin-bottom: 12px;
+      font-size: 1.8rem;
+    }
+
+    .section {
+      margin-bottom: 50px;
+      scroll-margin-top: 60px;
+    }
+
+    .section h2 {
+      color: var(--purple);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      background: var(--purple);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .back-btn:hover {
+      background: var(--dark-purple);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2><i class="fas fa-route"></i> Tour Menu</h2>
+    <ul>
+      <li><a href="#overview">Platform Overview</a></li>
+      <li><a href="#programs">Program Access</a></li>
+      <li><a href="#admissions">Admissions Process</a></li>
+      <li><a href="#reports">Report Insights</a></li>
+      <li><a href="#support">Contact & Support</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1><i class="fas fa-compass"></i> Welcome to the AERO DAIRY Platform Tour</h1>
+
+    <div id="overview" class="section">
+      <h2>Platform Overview</h2>
+      <p>AERO DAIRY provides a unified, interactive dashboard tailored to streamline dairy education and operational excellence. Whether you're a student, admin, or partner, this platform gives you tools to manage programs, admissions, permits, and more—all from one central hub.</p>
+    </div>
+
+    <div id="programs" class="section">
+      <h2>Program Access</h2>
+      <p>Explore a range of structured modules covering Dairy Farming, Animal Health, Milk Processing, and more. Each program is designed with visual learning, practical steps, and real-world applications to help farmers, students, and entrepreneurs thrive.</p>
+    </div>
+
+    <div id="admissions" class="section">
+      <h2>Admissions Process</h2>
+      <p>Admission is seamless and fully online. Users fill out a form, upload necessary documents, and receive confirmation—all within minutes. The admin backend allows quick review and approval or follow-up of applications.</p>
+    </div>
+
+    <div id="reports" class="section">
+      <h2>Report Insights</h2>
+      <p>Track dairy progress with visual reports and monthly insights. Metrics include user engagement, production trends, training performance, and funding status—all accessible through dynamic dashboards and downloadable formats.</p>
+    </div>
+
+    <div id="support" class="section">
+      <h2>Contact & Support</h2>
+      <p>If you ever need assistance, the platform provides a direct messaging feature, social channels, and FAQs. Support is available through WhatsApp, Email, and scheduled calls. Our goal is to ensure you're always connected to the right resources.</p>
+    </div>
+
+    <a href="dashboard.php" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+  </div>
+
+</body>
+</html>

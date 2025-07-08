@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admission – AERO DAIRY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* —— BASE RESET —— */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#e6ffe6;color:#000;
+      padding-top:60px;display:flex;flex-direction:column;
+      min-height:100vh;text-align:center;
+    }
+
+
+    /* —— NAVBAR —— */
+    .navbar{
+      position:fixed;top:0;left:0;width:100%;
+      background:rgba(0,0,0,.8);backdrop-filter:blur(5px);
+      display:flex;justify-content:flex-end;z-index:100;
+    }
+    .navbar a{
+      color:#fff;padding:14px 20px;text-decoration:none;font-weight:bold;
+      transition:background .3s;
+    }
+    .navbar a:hover,.navbar a.active{background:rgba(255,255,255,.25)}
+
+    /* —— HEADER —— */
+    .header-banner{
+      background:linear-gradient(90deg,#014d00,#02a302);
+      color:#fff;padding:40px 10px 30px;text-shadow:1px 1px 4px rgba(0,0,0,.4);
+    }
+    .header-banner h1{
+      font-size:42px;font-weight:bold;letter-spacing:1px;margin-bottom:10px;
+      animation:colorCycle 10s linear infinite;
+    }
+    .header-banner p{font-size:20px;max-width:760px;margin:0 auto 8px}
+
+    /* —— MARQUEE —— */
+    .marquee{
+      background:#1b5e20;color:#fff;font-weight:bold;font-size:18px;
+      padding:6px 0;margin-bottom:20px;
+    }
+
+    /* —— SECTIONS —— */
+    .content-block{max-width:800px;margin:20px auto 40px;padding:0 20px;text-align:left}
+    .admission-section{
+      margin-bottom:28px;border-radius:8px;overflow:hidden;
+      opacity:0;transform:translateX(-60px);animation:slideIn .8s forwards;
+    }
+    .admission-section:nth-child(1){animation-delay:.1s}
+    .admission-section:nth-child(2){animation-delay:.25s}
+    .admission-section:nth-child(3){animation-delay:.4s}
+    .admission-section:nth-child(4){animation-delay:.55s}
+    .admission-section:nth-child(5){animation-delay:.7s}
+    .admission-section h2{
+      margin:0;padding:14px 18px;font-size:26px;text-shadow:1px 1px 3px rgba(0,0,0,.4);
+      animation:colorCycle 12s linear infinite;
+    }
+    .admission-section div,.admission-section ul{padding:18px 24px;font-size:18px;line-height:1.6}
+    .admission-section ul{list-style:square}
+
+    /* section colors */
+    .process{background:#c8e6c9}.process h2{background:#1b5e20;color:#fff}
+    .steps{background:#b2dfdb}.steps h2{background:#00796b;color:#fff}
+    .requirements{background:#d1c4e9}.requirements h2{background:#6a1b9a;color:#fff}
+    .aid{background:#ffe0b2}.aid h2{background:#ef6c00;color:#fff}
+    .help{background:#dcedc8}.help h2{background:#558b2f;color:#fff}
+
+    /* —— APPLY & BACK BUTTONS —— */
+    .button, .back-btn{
+      display:inline-block;margin:25px 12px;padding:12px 28px;
+      background:#014d00;color:#fff;text-decoration:none;font-size:18px;
+      border-radius:6px;transition:background .3s,transform .3s;cursor:pointer;
+    }
+    .button:hover, .back-btn:hover{background:#027502;transform:scale(1.05)}
+
+    /* —— FOOTER —— */
+    footer{
+      margin-top:auto;background:rgba(0,0,0,.8);color:#fff;
+      padding:14px 10px;font-size:14px;text-align:center;
+    }
+
+    /* —— MODAL FORM —— */
+    .modal{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;
+      z-index:200;
+    }
+    .modal.show{display:flex;animation:fadeIn .3s}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .modal-content{
+      background:#fff;margin:20px;border-radius:10px;max-width:420px;width:90%;
+      padding:2rem;box-shadow:0 6px 24px rgba(0,0,0,.35);
+      animation:slideDown .4s cubic-bezier(.25,.8,.25,1);
+    }
+    @keyframes slideDown{from{transform:translateY(-40px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .modal-content h3{margin-bottom:1rem;color:#014d00;text-align:center}
+    .modal-content label{display:block;margin-bottom:.4rem;font-weight:bold}
+    .modal-content input,.modal-content select{
+      width:100%;padding:.65rem;border:1px solid #ccc;border-radius:6px;margin-bottom:1rem;
+      font-size:16px;
+    }
+    .modal-content button{
+      width:100%;padding:.75rem;background:#014d00;color:#fff;border:none;
+      border-radius:6px;font-size:17px;cursor:pointer;
+    }
+    .modal-content button:hover{background:#027502}
+    .close-btn{
+      position:absolute;top:10px;right:14px;font-size:26px;font-weight:bold;color:#fff;
+      cursor:pointer;
+    }
+
+    /* —— ANIMATIONS —— */
+    @keyframes colorCycle{
+      0%{color:#ffecb3}25%{color:#aeea00}50%{color:#00e5ff}75%{color:#ff9100}100%{color:#ffecb3}
+    }
+    @keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+
+    @media(max-width:600px){
+      .navbar a{padding:12px 14px;font-size:14px}
+      .header-banner h1{font-size:32px}
+      .header-banner p{font-size:17px}
+      .admission-section h2{font-size:22px}
+      .admission-section div,.admission-section ul{font-size:16px}
+      .button, .back-btn{font-size:16px;padding:10px 22px}
+      .marquee{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="dashboard.php">Home</a>
+	 <a href="report.html">Report</a>
+    <a href="admission.html" class="active">Admission</a>
+    <a href="permits.html">Permits</a>
+    <a href="resources.html">Resources</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="about.html">About Us</a>
+    <a href="logout.php">Logout</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="header-banner">
+    <h1>Admission to AERO DAIRY Programs</h1>
+    <p>Advance your dairy expertise with world‑class training, resources, and support.</p>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <marquee behavior="scroll" direction="left" scrollamount="7">Apply Now – Free Application – Improve Your Dairy Production!</marquee>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="content-block">
+    <article class="admission-section process">
+      <h2>Process Overview</h2><div>Submit your application, attach required documents, and await approval.</div>
+    </article>
+    <article class="admission-section steps">
+      <h2>Application Steps</h2><div><ol><li>Complete the online registration form.</li><li>Upload supporting documents.</li><li>Attend a brief virtual interview.</li><li>Receive onboarding instructions.</li></ol></div>
+    </article>
+    <article class="admission-section requirements">
+      <h2>Requirements</h2><ul><li>Source of milk</li><li>Access to a dairy farm</li><li>Basic dairy equipment</li><li>Regulatory compliance</li></ul>
+    </article>
+    <article class="admission-section aid">
+      <h2>Financial Aid</h2><div>Scholarships, equipment loans, and more available during application.</div>
+    </article>
+    <article class="admission-section help">
+      <h2>Need Help?</h2><div>Email: <strong>admissions@aerodairy.com</strong><br/>Phone: <strong>+254 700 123 456</strong></div>
+    </article>
+
+    <!-- APPLY NOW & BACK BUTTONS -->
+    <div style="text-align:center">
+      <a class="button" id="applyBtn">Apply Now</a>
+      <a class="back-btn" href="dashboard.php">Back to Dashboard</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>©AERO DAIRY | Empowering Sustainable Milk Production</footer>
+
+  <!-- MODAL FORM -->
+  <div id="applyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Application Form</h3>
+      <form action="submit_application.php" method="post">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required />
+
+        <label for="studyArea">Area to Study</label>
+        <select id="studyArea" name="studyArea" required>
+          <option value="">-- Select Area --</option>
+          <option value="Milk Processing">Milk Processing</option>
+          <option value="Dairy Farming">Dairy Farming</option>
+          <option value="Animal Nutrition">Animal Nutrition</option>
+          <option value="Veterinary Care">Veterinary Care</option>
+        </select>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const applyBtn   = document.getElementById('applyBtn');
+    const applyModal = document.getElementById('applyModal');
+    const closeModal = document.getElementById('closeModal');
+
+    applyBtn.addEventListener('click', () => {
+      applyModal.classList.add('show');
+    });
+    closeModal.addEventListener('click', () => {
+      applyModal.classList.remove('show');
+    });
+    window.addEventListener('click', (e) => {
+      if (e.target === applyModal) applyModal.classList.remove('show');
+    });
+  </script>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

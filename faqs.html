@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs – AERO DAIRY</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',Arial,Helvetica,sans-serif;
+      background:linear-gradient(135deg,#c8ff7c,#00c9b7);
+      color:#fff;min-height:100vh;display:flex;flex-direction:column;
+      padding-top:60px;text-align:center;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,.85);
+      display:flex;justify-content:flex-end;z-index:1000;
+    }
+    .navbar a{
+      color:#fff;padding:14px 20px;font-weight:bold;text-decoration:none;
+      transition:background .3s;
+    }
+    .navbar a:hover,.navbar a.active{background:rgba(255,255,255,.2)}
+
+    /* HEADER */
+    .header-banner{
+      background:linear-gradient(90deg,#004d00,#00a651);
+      padding:50px 20px 36px;text-shadow:1px 1px 4px rgba(0,0,0,.4);
+    }
+    .glow-title{
+      font-size:44px;font-weight:800;animation:colorCycle 10s linear infinite;
+    }
+    .header-banner p{font-size:20px;max-width:820px;margin:12px auto 0}
+
+    /* FAQ CARD */
+    .card{
+      max-width:960px;margin:40px auto 60px;background:linear-gradient(135deg,rgba(46,125,50,.90),rgba(196,79,255,.90));
+      backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.15);
+      border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.24);
+      text-align:left;overflow:hidden;animation:fUp .8s ease both;
+    }
+    .card h2{
+      background:#732bff;padding:18px 24px;font-size:26px;text-align:center;
+    }
+    /* Individual FAQ */
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.18)}
+    .faq-question{
+      padding:16px 30px;cursor:pointer;position:relative;font-size:18px;font-weight:600;
+    }
+    .faq-question::before{
+      content:"➤";position:absolute;left:10px;transition:transform .3s ease;
+    }
+    .faq-question.active::before{transform:rotate(90deg)}
+    .faq-answer{
+      display:none;padding:0 30px 18px 46px;font-size:17px;line-height:1.65;
+    }
+    .faq-answer.show{display:block}
+
+    /* FOOTER */
+    footer{
+      background:rgba(0,0,0,.85);font-size:14px;padding:14px;color:#fff;margin-top:auto;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes colorCycle{
+      0%{color:#81c784}25%{color:#80cbc4}50%{color:#ffb74d}75%{color:#ba68c8}100%{color:#81c784}
+    }
+    @media(max-width:600px){
+      .navbar a{padding:12px 14px;font-size:14px}
+      .glow-title{font-size:32px}
+      .faq-question{font-size:17px;padding:14px 26px 14px 40px}
+      .faq-answer{font-size:16px;padding-left:40px}
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="homepage.html">Home</a>
+  <a href="programs.html">Programs</a>
+  <a href="admission.html">Admission</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="about.html">About Us</a>
+  <a href="logout.php">Logout</a>
+</nav>
+<!-- Navbar -->
+  <div class="navbar">
+    <a href="dashboard.php">&larr; Back to Dashboard</a>
+    <span></span>
+  </div>
+
+<!-- HEADER -->
+<header class="header-banner">
+  <h1 class="glow-title">FAQs</h1>
+  <p>Your common queries answered in one place.</p>
+</header>
+
+<!-- FAQ CARD -->
+<article class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <!-- 20 FAQ ITEMS -->
+  <div class="faq-item"><div class="faq-question">1. What is AERO DAIRY?</div><div class="faq-answer">AERO DAIRY is a sustainable dairy initiative providing quality milk and comprehensive training for farmers and students.</div></div>
+  <div class="faq-item"><div class="faq-question">2. Where is AERO DAIRY located?</div><div class="faq-answer">We are headquartered in Nyandarua County, Kenya, with outreach programs country‑wide.</div></div>
+  <div class="faq-item"><div class="faq-question">3. How do I apply for a program?</div><div class="faq-answer">Visit the <strong>Admission</strong> page on our dashboard, click <em>Apply Now</em>, complete the form, and submit.</div></div>
+  <div class="faq-item"><div class="faq-question">4. Are scholarships available?</div><div class="faq-answer">Yes. Scholarships are offered based on merit and need; check announcements in News & Events.</div></div>
+  <div class="faq-item"><div class="faq-question">5. What programs are offered?</div><div class="faq-answer">Programs include Dairy Farming, Milk Processing, Animal Health, Agribusiness Management, and more.</div></div>
+  <div class="faq-item"><div class="faq-question">6. Can I visit the farm?</div><div class="faq-answer">Absolutely. Guided tours run monthly. Book a slot in the <em>Tour</em> section.</div></div>
+  <div class="faq-item"><div class="faq-question">7. How do I contact support?</div><div class="faq-answer">Email us at <a href="mailto:info@aerodairy.com" style="color:#cddc39;">info@aerodairy.com</a> or call +254 700 123 456.</div></div>
+  <div class="faq-item"><div class="faq-question">8. Is AERO DAIRY certified?</div><div class="faq-answer">Yes, we comply with Kenyan dairy regulations and international quality standards.</div></div>
+  <div class="faq-item"><div class="faq-question">9. How is data privacy handled?</div><div class="faq-answer">Your data is protected under our strict <a href="privacy.html" style="color:#cddc39;">Privacy Policy</a>.</div></div>
+  <div class="faq-item"><div class="faq-question">10. Can I partner with AERO DAIRY?</div><div class="faq-answer">Yes! Reach out via the <em>Leadership</em> contact on our About Us page.</div></div>
+  <div class="faq-item"><div class="faq-question">11. What payment methods are accepted?</div><div class="faq-answer">We accept M-Pesa, bank transfers, major credit/debit cards, and selected mobile wallets.</div></div>
+  <div class="faq-item"><div class="faq-question">12. Do you offer internships?</div><div class="faq-answer">Internships run quarterly. Check the Programs page for open slots.</div></div>
+  <div class="faq-item"><div class="faq-question">13. Can I order milk online?</div><div class="faq-answer">Home delivery is in pilot phase. Subscribe to our newsletter for launch updates.</div></div>
+  <div class="faq-item"><div class="faq-question">14. How frequently is the News section updated?</div><div class="faq-answer">Weekly, covering events, innovations, and success stories.</div></div>
+  <div class="faq-item"><div class="faq-question">15. What is your refund policy?</div><div class="faq-answer">Refunds are processed case‑by‑case within 14 working days after a formal request.</div></div>
+  <div class="faq-item"><div class="faq-question">16. Can I volunteer?</div><div class="faq-answer">Yes! Submit your interest via the Contact Us page and we’ll get back to you.</div></div>
+  <div class="faq-item"><div class="faq-question">17. Do you offer online learning?</div><div class="faq-answer">An e‑learning portal is under development and will launch soon.</div></div>
+  <div class="faq-item"><div class="faq-question">18. Which languages do you support?</div><div class="faq-answer">We currently support English and Kiswahili, with plans for local dialects.</div></div>
+  <div class="faq-item"><div class="faq-question">19. Can I get farm investment advice?</div><div class="faq-answer">Yes, our agribusiness team provides expert consulting through the Farmer Portal.</div></div>
+  <div class="faq-item"><div class="faq-question">20. How do I report an issue?</div><div class="faq-answer">Use the Contact Us form or email us directly with detailed information.</div></div>
+</article>
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+<!-- FOOTER -->
+<footer>© AERO DAIRY | All Rights Reserved</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q =>{
+    q.addEventListener('click',()=>{
+      q.classList.toggle('active');
+      const ans = q.nextElementSibling;
+      ans.classList.toggle('show');
+    });
+  });
+</script>
+<footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

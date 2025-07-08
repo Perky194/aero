@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --green-dark: #014d00;
+      --green-light: #02a302;
+      --blur-bg: rgba(0, 0, 0, 0.55);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: url('880dc7b1af4a7c3998696a87f4efa7a8.jpg') center/cover fixed no-repeat;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: var(--blur-bg);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar a:hover {
+      opacity: 0.7;
+    }
+    .terms-card {
+      max-width: 800px;
+      margin: 110px auto 40px;
+      background: rgba(0, 0, 0, 0.78);
+      padding: 30px 36px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .terms-card h1 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      text-align: center;
+      color: var(--green-light);
+    }
+    .terms-section {
+      margin-bottom: 24px;
+    }
+    .terms-section h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #80ffd0;
+    }
+    .terms-section p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .checkbox-area {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .checkbox-area input {
+      transform: scale(1.2);
+      accent-color: var(--green-light);
+      margin-top: 4px;
+    }
+    .agree-btn {
+      margin-top: 24px;
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 6px;
+      background: var(--green-light);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: not-allowed;
+      opacity: 0.5;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .agree-btn.enabled {
+      cursor: pointer;
+      opacity: 1;
+    }
+    .agree-btn.enabled:hover {
+      transform: scale(1.03);
+    }
+    @media(max-width: 480px) {
+      .terms-card {
+        margin: 90px 12px;
+        padding: 24px;
+      }
+      .terms-card h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="dashboard.php">&larr; Back to Dashboard</a>
+    <span>Terms of Service</span>
+  </div>
+
+  <!-- Main Terms Content -->
+  <section class="terms-card">
+    <h1>Terms of Service</h1>
+
+    <div class="terms-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using AERO DAIRY's services, you agree to abide by the terms and conditions outlined in this document. If you do not agree, please do not use our services or website.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>2. Use of Services</h2>
+      <p>You agree to use our services only for lawful purposes and in accordance with all applicable laws and regulations. Any misuse, including hacking, spreading malware, or unauthorized data access, is strictly prohibited.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>3. Intellectual Property</h2>
+      <p>All content on this site, including logos, text, graphics, and software, is the property of AERO DAIRY and protected by intellectual property laws. You may not reproduce, distribute, or exploit any material without written consent.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>4. Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to our services at our sole discretion, without prior notice, for conduct that violates these Terms or is harmful to other users or AERO DAIRY.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>5. Disclaimer & Liability</h2>
+      <p>All services and content are provided "as is" without warranty. AERO DAIRY is not responsible for any indirect or consequential damages arising from use of the website or services.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>6. Changes to the Terms</h2>
+      <p>We may update or modify these terms at any time. Continued use of our services following updates constitutes acceptance of the revised terms.</p>
+    </div>
+
+    <!-- Agreement Checkbox -->
+    <div class="checkbox-area">
+      <input type="checkbox" id="agreeTerms">
+      <label for="agreeTerms">I have read and agree to AERO DAIRY’s Terms of Service.</label>
+    </div>
+
+    <button id="agreeBtn" class="agree-btn" disabled>I Agree &amp; Continue</button>
+  </section>
+  
+
+  <script>
+    const checkbox = document.getElementById('agreeTerms');
+    const btn = document.getElementById('agreeBtn');
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        btn.disabled = false;
+        btn.classList.add('enabled');
+      } else {
+        btn.disabled = true;
+        btn.classList.remove('enabled');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      if (!btn.disabled) {
+        alert('Thanks for agreeing to our Terms of Service!');
+        window.location.href = 'dashboard.php'; // Redirect
+      }
+    });
+	
+  </script>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+  
+ <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</html>

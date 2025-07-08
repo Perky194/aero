@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us – AERO DAIRY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="green.jpeg" />
+  <style>
+  /* RESET + BASE ---------------------------------------------------- */
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fffef9;color:#000;
+    padding-top:60px;min-height:100vh;
+    display:flex;flex-direction:column;
+  }
+
+  /* NAVBAR ---------------------------------------------------------- */
+  .navbar{
+    position:fixed;top:0;left:0;width:100%;
+    background:rgba(0,0,0,.85);
+    display:flex;justify-content:flex-end;z-index:1000;
+  }
+  .navbar a{
+    color:#fff;padding:14px 20px;text-decoration:none;font-weight:bold;
+    transition:background .3s;
+  }
+  .navbar a:hover,.navbar a.active{
+    background:rgba(255,255,255,.25);
+  }
+
+  /* HEADER BANNER --------------------------------------------------- */
+  .header{
+    background:linear-gradient(90deg,#004d00,#00a651);
+    color:#fff;text-align:center;padding:50px 20px 34px;
+    text-shadow:1px 1px 4px rgba(0,0,0,.4);
+  }
+  .header h1{
+    font-size:42px;font-weight:bold;
+    animation:colorCycle 10s linear infinite;letter-spacing:1px;
+  }
+  .header p{font-size:20px;margin-top:8px}
+
+  /* MARQUEE --------------------------------------------------------- */
+  .marquee{
+    background:#1b5e20;color:#fff;font-weight:bold;
+    font-size:18px;padding:6px 0;
+  }
+
+  /* CONTENT SECTIONS ------------------------------------------------ */
+  .wrapper{max-width:900px;margin:40px auto;padding:0 20px}
+  .section{
+    margin-bottom:30px;border-radius:8px;overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    opacity:0;transform:translateX(-60px);
+    animation:slideIn .8s forwards;
+  }
+  .section:nth-child(1){animation-delay:.1s}
+  .section:nth-child(2){animation-delay:.3s}
+  .section:nth-child(3){animation-delay:.5s}
+
+  .section h2{
+    color:#fff;padding:14px 20px;font-size:26px;
+    text-shadow:1px 1px 3px rgba(0,0,0,.4);
+    animation:colorCycle 12s linear infinite;
+  }
+  .section p{
+    padding:22px 26px;font-size:18px;line-height:1.6;
+    background:#f4fff1;
+  }
+
+  /* COLOR STRIPES */
+  .mission h2{background:#2e7d32}
+  .vision h2{background:#00695c}
+  .history h2{background:#6a1b9a}
+  .mission{background:#c8e6c9}
+  .vision{background:#b2dfdb}
+  .history{background:#e1bee7}
+
+  /* IMAGE ----------------------------------------------------------- */
+  .farm-img{
+    width:100%;max-width:100%;height:auto;display:block;
+    border-radius:8px;margin:20px 0;box-shadow:0 4px 10px rgba(0,0,0,.15);
+  }
+
+  /* FOOTER ---------------------------------------------------------- */
+  footer{
+    margin-top:auto;background:rgba(0,0,0,.85);
+    color:#fff;text-align:center;padding:14px 10px;font-size:14px;
+  }
+
+  /* ANIMATIONS ------------------------------------------------------ */
+  @keyframes colorCycle{
+    0%{color:#ffecb3}25%{color:#aeea00}50%{color:#00e5ff}
+    75%{color:#ff9100}100%{color:#ffecb3}
+  }
+  @keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+
+  /* RESPONSIVE ------------------------------------------------------ */
+  @media(max-width:600px){
+    .navbar a{padding:12px 14px;font-size:14px}
+    .header h1{font-size:30px}.header p{font-size:17px}
+    .section h2{font-size:22px}
+    .section p{font-size:16px}
+    .marquee{font-size:16px}
+  }
+  
+  
+    /* ---------- back button ---------- */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      border: purple;
+      color: purple;
+      font-weight: 600;
+      font-size: 16px;
+      padding: .75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,.2);
+      transition: background .3s;
+    }
+    .back-btn:hover {
+      background: var(--green);
+	  {
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+   <a href="dashboard.php">Home</a>
+    <a href="report.html">Report</a>
+    <a href="admission.html">Admission</a>
+    <a href="permits.html">Permits</a>
+    <a href="resources.html">Resources</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html" class=>Contact us</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="logout.php">Logout</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>About AERO DAIRY</h1>
+    <p>Committed to quality, innovation, and farmer empowerment.</p>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <marquee behavior="scroll" direction="left" scrollamount="7">
+      High Quality Dairy • Sustainable Farming • Farmer Profitability • Join Us Today!
+    </marquee>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="wrapper">
+
+    <!-- Mission -->
+    <article class="section mission">
+      <h2>Our Mission</h2>
+      <p>
+        To provide high‑quality dairy products that nourish communities while
+        ensuring fair profits for every farmer in our network.
+      </p>
+    </article>
+
+    <!-- Vision -->
+    <article class="section vision">
+      <h2>Our Vision</h2>
+      <p>
+        To expand the reach and impact of dairy operations across the region,
+        connecting producers directly with consumers and fostering sustainable
+        agricultural practices.
+      </p>
+    </article>
+
+    <!-- History -->
+    <article class="section history">
+      <h2>Our History</h2>
+      <p>
+        In 2020, amid the COVID‑19 pandemic, many lost their livelihoods—
+        including our founder. Seeing countless farmers struggle, we conceived
+        AERO DAIRY: a platform where anyone with livestock could sell directly
+        to consumers without middlemen. Together with a dedicated support team,
+        we began building this website to empower farmers and uplift local economies.
+      </p>
+      <img src="	cowimage.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	 <img src="	his.jpeg alt="Dairy farm history" class="farm-img">
+    </article>
+	 <img src="	hist.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	 <img src="	perimage.jpeg.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	 <img src="	histo.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	 <img src="	histor.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	<img src="		modern.jpeg" alt="Dairy farm history" class="farm-img">
+    </article>
+	<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+	
+	 <!-- Back to Dashboard Button -->
+    <a href="dashboard.php" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a>
+
+ <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

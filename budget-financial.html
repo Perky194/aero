@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget &amp; Financial Projections – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f9f4;
+      display: flex; flex-direction: column; min-height: 100vh;
+      color: #333;
+    }
+    header {
+      background: #008c45; color: #fff; padding: 20px; text-align: center;
+    }
+    header h1 { font-size: 2em; }
+    nav { margin-top: 10px; }
+    nav a {
+      color: #fff; margin: 0 10px; text-decoration: none;
+      font-size:.9rem; font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      flex:1; padding: 40px 20px; max-width:800px; margin:0 auto;
+    }
+    h2 { color:#ffa500; margin-top:20px; }
+    h3 { color:#4B0082; margin-top:20px; }
+    h4 { color:#008c45; margin-top:20px; }
+    ul { padding-left:20px; }
+    li { margin:8px 0; }
+    table {
+      width:100%; border-collapse:collapse; margin:20px 0;
+    }
+    th,td { border:1px solid #ccc; padding:8px; text-align:center; }
+    th { background:#800080; color:#fff; }
+
+    .back-btn {
+      position:fixed; bottom:15px; left:15px;
+      padding:10px 18px; font-size:.8rem;
+      background:#800080; color:#fff; border-radius:6px;
+      text-decoration:none; z-index:1000;
+    }
+    .back-btn:hover { background:#5a005a; }
+
+    /* FOOTER */
+    footer {
+      background:#4B0082; color:#ddd; padding:20px 0 5px;
+      font-size:.75rem; margin-top:auto;
+    }
+    .footer-container { width:75%; margin:0 auto; }
+    .footer-header {
+      display:flex; justify-content:space-between;
+      align-items:baseline; margin-bottom:10px;
+    }
+    .footer-header h4 {
+      color:#90ee90; font-size:.9rem; margin:0;
+      padding-bottom:4px; border-bottom:1px solid #90ee90;
+    }
+    .footer-content {
+      display:flex; justify-content:space-between;
+      flex-wrap:wrap; gap:20px;
+    }
+    .col { flex:1; min-width:150px; }
+    .col ul { list-style:none; margin:0; padding:0; }
+    .col li { margin:4px 0; }
+    .col a {
+      color:#ddd; text-decoration:none; font-size:.75rem;
+    }
+    .col a:hover { text-decoration:underline; }
+
+    .social-grid {
+      display:grid; grid-template-columns:repeat(3,auto);
+      gap:4px 20px;
+    }
+    @media(max-width:600px){
+      .footer-header, .footer-content {
+        flex-direction:column; align-items:center;
+      }
+      .social-grid { grid-template-columns:repeat(2,auto); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-chart-line"></i> Budget &amp; Financial Projections</h1>
+    <nav>
+      <a href="requirements.html">Requirements</a>
+      <a href="about.html">About Us</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Budget Overview (SMART Goals)</h2>
+    <p><strong>S</strong>pecific: Equipment, salaries, marketing to boost milk production by 30% in 12 months.</p>
+    <p><strong>M</strong>easurable: Monthly expense tracking via accounting software.</p>
+    <p><strong>A</strong>chievable: Based on realistic quotes and market salaries.</p>
+    <p><strong>R</strong>elevant: Prioritizes milk preservation and quality.</p>
+    <p><strong>T</strong>ime-bound: July 2025 – June 2026.</p>
+
+    <h3>1. Equipment & Infrastructure</h3>
+    <ul>
+      <li>3 Milk chillers: Ksh 900,000</li>
+      <li>Installation & maintenance: Ksh 150,000</li>
+      <li>Refrigerated van lease (annual): Ksh 600,000</li>
+      <li>Facility renovations: Ksh 350,000</li>
+    </ul>
+
+    <h3>2. Human Resources</h3>
+    <ul>
+      <li>2 Technicians: Ksh 1,200,000</li>
+      <li>Training programs: Ksh 180,000</li>
+      <li>Admin top-ups: Ksh 300,000</li>
+    </ul>
+
+    <h3>3. Marketing & Operations</h3>
+    <ul>
+      <li>Digital campaigns: Ksh 250,000</li>
+      <li>Community outreach: Ksh 150,000</li>
+      <li>Utilities & consumables: Ksh 400,000</li>
+    </ul>
+
+    <h4>Total Budget: <strong>Ksh 4,780,000</strong> for 2025/26</h4>
+
+    <h2>Financial Projections</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Sales (Ksh)</th>
+          <th>Costs (Ksh)</th>
+          <th>Net Profit (Ksh)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Jul 2025</td><td>400,000</td><td>350,000</td><td>50,000</td></tr>
+        <tr><td>Aug 2025</td><td>450,000</td><td>360,000</td><td>90,000</td></tr>
+        <tr><td>Sept 2025</td><td>480,000</td><td>370,000</td><td>110,000</td></tr>
+        <tr><td>Oct 2025</td><td>520,000</td><td>380,000</td><td>140,000</td></tr>
+        <tr><td>Nov 2025</td><td>600,000</td><td>390,000</td><td>210,000</td></tr>
+        <tr><td>Dec 2025</td><td>620,000</td><td>400,000</td><td>220,000</td></tr>
+        <tr><td>Jan 2026</td><td>650,000</td><td>410,000</td><td>240,000</td></tr>
+        <tr><td>Feb 2026</td><td>670,000</td><td>420,000</td><td>250,000</td></tr>
+        <tr><td>Mar 2026</td><td>700,000</td><td>430,000</td><td>270,000</td></tr>
+        <tr><td>Apr 2026</td><td>720,000</td><td>440,000</td><td>280,000</td></tr>
+        <tr><td>May 2026</td><td>750,000</td><td>450,000</td><td>300,000</td></tr>
+        <tr><td>Jun 2026</td><td>800,000</td><td>460,000</td><td>340,000</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Breakeven Analysis</h2>
+    <p>Projected between Dec 2025 and Jan 2026, assuming stable output and prices.</p>
+    <ul>
+      <li>Fixed Costs: Ksh 2,500,000/year</li>
+      <li>Variable Costs: ~Ksh 40,000/month</li>
+      <li>Unit Price: Ksh 60/litre</li>
+      <li>Litres to Break Even: ~6,500/month</li>
+    </ul>
+
+    <h2>Risk Mitigation</h2>
+    <ul>
+      <li>Diversify with yogurt production</li>
+      <li>Insurance for livestock & equipment</li>
+      <li>Contingency reserve: Ksh 300,000</li>
+      <li>Ongoing staff training</li>
+    </ul>
+
+    <h2>Yearly Summary</h2>
+    <table>
+      <tr><th>Category</th><th>Total (Ksh)</th></tr>
+      <tr><td>Total Sales</td><td>7,360,000</td></tr>
+      <tr><td>Total Costs</td><td>5,160,000</td></tr>
+      <tr><td>Net Profit</td><td>2,200,000</td></tr>
+      <tr><td>CapEx</td><td>2,280,000</td></tr>
+      <tr><td>ROI</td><td>48%</td></tr>
+    </table>
+
+    <h2>Long‑Term Strategy</h2>
+    <ul>
+      <li>Reinvest 40% of profits</li>
+      <li>Loan for second cooling facility by 2027</li>
+      <li>Direct‑to‑consumer digital sales</li>
+    </ul>
+
+    <p style="margin-top:20px; font-style:italic; color:#444;">
+      This blueprint ensures AERO DAIRY’s profitability and resilience.
+    </p>
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <a class="back-btn" href="requirements.html">
+    <i class="fas fa-arrow-left"></i> Back to Requirements
+  </a>
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purpose – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef6ee;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: #014d00;
+      color: #fff;
+      padding: 16px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 4px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 30%;
+      padding-right: 20px;
+      border-right: 4px solid #800080;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 16px;
+    }
+    .sidebar a {
+      display: block;
+      background: #800080;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .sidebar a:hover {
+      background: #5a005a;
+    }
+
+    .content {
+      width: 70%;
+      padding-left: 24px;
+    }
+    .content h2 {
+      font-size: 1.8rem;
+      color: #014d00;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #90ee90;
+      padding-bottom: 6px;
+    }
+    .content h3 {
+      font-size: 1.4rem;
+      color: #800080;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-left: 4px solid #02a302;
+      padding-left: 8px;
+    }
+    .content p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .content ul, .content ol {
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      background: #800080;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: .8rem;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .back-btn:hover {
+      background: #5a005a;
+    }
+
+    footer {
+      background: #4b0082;
+      color: #eee;
+      padding: 8px 0;
+      font-size: .7rem;
+      text-align: center;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar, .content {
+        width: 100%;
+        padding: 0;
+      }
+      .sidebar {
+        margin-bottom: 20px;
+        border-right: none;
+      }
+      .content {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-bullseye"></i> Our Purpose</h1>
+    <nav>
+      <a href="requirements.html">Requirements</a>
+      <a href="about.html">About Us</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#funds">1. Seeking Funds & Investment</a></li>
+        <li><a href="#challenges">2. Solving Operational Challenges</a></li>
+        <li><a href="#alignment">3. Industry Alignment</a></li>
+        <li><a href="#impact">4. Real-World Impact</a></li>
+        <li><a href="#future">5. Looking Ahead</a></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <h2>Defining Our Core Purpose</h2>
+
+      <h3 id="funds">1. Seeking Funds & Investment</h3>
+      <p>Securing robust financial support is the cornerstone of AERO DAIRY's transformation journey. Our commitment to innovation, infrastructure expansion, and capacity building begins with a well-funded foundation.</p>
+      <p>We strategically channel investments into:</p>
+      <ul>
+        <li><strong>Cutting-Edge Equipment:</strong> Smart sensors, robotic milking, and IoT-connected cold chains.</li>
+        <li><strong>Modern Infrastructure:</strong> High-capacity chilling plants, bio-secure barns, and feed silos.</li>
+        <li><strong>R&D Partnerships:</strong> Collaborating with agri-tech firms to pioneer resilient livestock breeding and green energy use.</li>
+      </ul>
+      <p><em>Why it's core:</em> Lack of access to capital is the #1 obstacle for most small and mid-sized dairy producers. We’re changing that by opening doors to local and global investors through transparent ROI models and impact-focused growth strategies.</p>
+
+      <h3 id="challenges">2. Solving Operational Challenges</h3>
+      <p>Milk loss, inconsistent quality, and manual inefficiencies are common in developing dairy systems. We tackle them head-on through:</p>
+      <ul>
+        <li><strong>Integrated Cold Chains:</strong> Solar-backed chillers and digital monitoring for stable milk temperatures during transport.</li>
+        <li><strong>Workforce Upskilling:</strong> Training dairy staff and farmers on hygiene, data tracking, and animal handling.</li>
+        <li><strong>Standard Operating Protocols:</strong> Establishing rigorous, repeatable procedures to ensure product quality and staff safety.</li>
+      </ul>
+      <p><em>Why it's core:</em> Consistency in dairy production leads to customer trust, fewer recalls, and sustainable pricing. Solving these problems boosts market confidence and long-term partnerships.</p>
+
+      <h3 id="alignment">3. Industry Alignment</h3>
+      <p>AERO DAIRY is laser-focused on syncing its activities with both national dairy goals and global sustainability targets. We align with:</p>
+      <ul>
+        <li><strong>FAO Sustainability Goals:</strong> Efficient land use, carbon reduction, and animal welfare.</li>
+        <li><strong>Kenya Dairy Board Policies:</strong> Supporting milk safety laws, traceability, and cooperative strengthening.</li>
+        <li><strong>Private Sector Trends:</strong> Responding to demand for premium, traceable, and ethically sourced dairy products.</li>
+      </ul>
+      <p><em>Why it's core:</em> Aligning operations ensures credibility, access to policy support, and participation in large-scale tenders and export deals.</p>
+
+      <h3 id="impact">4. Real-World Impact</h3>
+      <p>From theory to field, we measure everything in lives improved, liters saved, and jobs created:</p>
+      <ul>
+        <li><strong>35% Increase</strong> in farmer income across supported counties.</li>
+        <li><strong>40% Reduction</strong> in milk spoilage in areas with solar-chilling access.</li>
+        <li><strong>200+ Jobs</strong> added annually through technician training and plant expansion.</li>
+      </ul>
+      <p><em>Why it's core:</em> Results speak louder than models. Every cow milked more efficiently, every liter saved from spoilage, moves Kenya toward food security and economic empowerment.</p>
+
+      <h3 id="future">5. Looking Ahead</h3>
+      <p>The road doesn’t stop at solving today’s problems. Our future focus includes:</p>
+      <ul>
+        <li><strong>Digital Tracking Apps:</strong> Blockchain-backed milk identity systems for full transparency.</li>
+        <li><strong>Carbon-Neutral Dairies:</strong> Biogas-powered heating and solar refrigeration at scale.</li>
+        <li><strong>Farmer-Owned Cooperatives:</strong> Enabling local groups to own, operate, and profit from processing units.</li>
+      </ul>
+      <p><em>Why it's core:</em> The dairy future is digital, decentralized, and data-driven. We’re leading that transition by investing now in what tomorrow’s consumers and regulators will demand.</p>
+    </section>
+  </div>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <a class="back-btn" href="requirements.html"><i class="fas fa-arrow-left"></i> Back to Requirements</a>
+<footer>
+  <div class="footer-container">
+    <div class="footer-header">
+      <h4>Quick Links</h4>
+      <h4>Follow AERO DAIRY</h4>
+    </div>
+   <footer style="background:#014d00; color:#eee; padding:20px 0; font-size:0.9rem;">
+  <div style="display:flex; justify-content:space-between; flex-wrap:wrap; width:90%; margin:auto; border-top:1px solid #90ee90; padding-top:10px;">
+
+<footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="dashboard.php" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="signup.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

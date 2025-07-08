@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nutrition & Supplements – AERO DAIRY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green-dark: #014d00;
+      --green-light: #02a302;
+      --orange: #ff6f00;
+      --purple: #6a1b9a;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://via.placeholder.com/1920x1080.png?text=Nutrition+Background') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      backdrop-filter: blur(5px);
+    }
+
+    header {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      color: var(--green-dark);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--purple);
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px var(--shadow);
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .content h2 {
+      color: var(--orange);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .content img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      margin: 15px 0;
+      display: block;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 20px;
+      background-color: var(--green-dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <header>
+      <h1><i class="fas fa-apple-alt"></i> Nutrition & Supplements</h1>
+      <p>Feeding for strength, growth, and production.</p>
+    </header>
+
+    <div class="content">
+      <h2>1. Early Calf Feeding</h2>
+      <p>Nutrition starts within the first hour of life. Calves must receive **colostrum** to boost immunity. By the second week, introduce calf starters and clean water to support gut development.</p>
+      <img src="https://via.placeholder.com/500x300.png?text=Feeding+Calf" alt="Feeding Calf" />
+
+      <h2>2. Balanced Rationing</h2>
+      <p>Dairy cows need the right balance of **carbohydrates, proteins, vitamins, and minerals**. A typical daily mix includes silage, hay, fresh fodder, grains, and mineral blocks. Feeding quantity depends on weight and production stage.</p>
+
+      <h2>3. Seasonal Feeding Practices</h2>
+      <p>During dry seasons, farmers must use preserved feeds like hay or maize silage. Supplement with molasses or urea-treated straw to maintain energy levels and avoid weight loss.</p>
+      <img src="https://via.placeholder.com/500x300.png?text=Feeding+Silage" alt="Silage Feeding" />
+
+      <h2>4. Mineral & Vitamin Supplements</h2>
+      <p>Mineral licks, salt blocks, and injectable vitamins prevent fertility issues, milk fever, and growth disorders. Farmers are encouraged to track supplement intake especially during pregnancy and lactation periods.</p>
+
+      <h2>5. Water Is a Nutrient</h2>
+      <p>Clean, cool water must be available 24/7. A cow producing 20 liters of milk drinks about 80–120 liters daily. Dehydration reduces feed intake and milk production sharply.</p>
+      <img src="https://via.placeholder.com/500x300.png?text=Watering+Station" alt="Cow Watering" />
+
+      <a href="animal-health.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Animal Health</a>
+    </div>
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

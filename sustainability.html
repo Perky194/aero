@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sustainability Practices – AERO DAIRY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      --accent1:#2e7d32;      /* Green */
+      --accent2:#ef6c00;      /* Orange */
+      --accent3:#7e57c2;      /* Purple */
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#f8fff2;
+      color:#000;
+      padding-top:60px;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(5px);
+      display:flex;
+      justify-content:flex-end;
+      z-index:1000;
+    }
+    .navbar a{
+      color:#fff;
+      padding:14px 20px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:background .3s;
+    }
+    .navbar a:hover,
+    .navbar a.active{
+      background:rgba(255,255,255,.2)
+    }
+
+    .header-banner{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#fff;
+      padding:50px 20px 34px;
+      text-shadow:1px 1px 4px rgba(0,0,0,.35);
+    }
+    .header-banner h1{
+      font-size:44px;
+      font-weight:bold;
+      letter-spacing:1px;
+      animation:colorCycle 10s linear infinite;
+    }
+    .header-banner p{
+      font-size:20px;
+      max-width:780px;
+      margin:8px auto 0;
+    }
+
+    .card{
+      max-width:900px;
+      margin:40px auto 30px;
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 8px 28px rgba(0,0,0,.25);
+      text-align:left;
+      overflow:hidden;
+      animation:fadeIn .8s ease-out both;
+    }
+    .card h2{
+      background:var(--accent1);
+      color:#fff;
+      padding:16px 20px;
+      font-size:26px;
+    }
+    .card section{
+      padding:20px 26px;
+    }
+    .card section:not(:last-child){
+      border-bottom:1px solid #e0e0e0;
+    }
+    .card h3{
+      color:var(--accent1);
+      margin-bottom:10px;
+    }
+    .card p, .card li{
+      font-size:18px;
+      line-height:1.6;
+      margin-bottom:10px;
+    }
+    .card ul{
+      padding-left:22px;
+      list-style:square;
+    }
+
+    .apply-btn, .back-btn{
+      display:inline-block;
+      margin:24px 10px 34px;
+      padding:12px 34px;
+      background:var(--accent3);
+      color:#fff;
+      border:none;
+      font-size:18px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:background .25s,transform .25s;
+      text-decoration:none;
+    }
+    .apply-btn:hover, .back-btn:hover{
+      background:#9575cd;
+      transform:scale(1.06);
+    }
+
+    footer{
+      margin-top:auto;
+      background:rgba(0,0,0,.85);
+      color:#fff;
+      text-align:center;
+      padding:14px;
+      font-size:14px;
+    }
+
+    @keyframes colorCycle{
+      0%{color:#ffecb3}
+      25%{color:#aeea00}
+      50%{color:#00e5ff}
+      75%{color:#ff9100}
+      100%{color:#ffecb3}
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @media(max-width:600px){
+      .navbar a{padding:12px 14px;font-size:14px}
+      .header-banner h1{font-size:32px}
+      .card h2{font-size:22px}
+      .card p,.card li{font-size:16px}
+      .apply-btn,.back-btn{font-size:16px;padding:10px 28px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+      <a href="homepage.html">Home</a>
+	 <a href="report.html">Report</a>
+	 <a href="admission.html">Admission</a>
+	  <a href="permits.html">Permits</a>
+     <a href="resources.html">Resources</a>
+     <a href="programs.html" class="active">Programs</a>
+     <a href="contact.html">Contact Us</a>
+     <a href="about.html">About Us</a>
+     <a href="logout.php">Logout</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="header-banner">
+    <h1>Sustainability Practices in Dairy</h1>
+    <p>Champion carbon‑neutral, regenerative, and climate‑smart dairy systems for a resilient future.</p>
+  </header>
+
+  <!-- MAIN CARD -->
+  <article class="card">
+    <h2>Program Details</h2>
+
+    <section>
+      <h3>Overview</h3>
+      <p>This program empowers dairy professionals to embed environmental stewardship across every
+         stage of the production chain. Learners explore regenerative grazing, energy‑efficient
+         processing, waste‑water valorization, and carbon‑neutral supply‑chain design.</p>
+    </section>
+
+    <section>
+      <h3>Learning Outcomes</h3>
+      <ul>
+        <li>Quantify and reduce farm‑to‑table greenhouse‑gas (GHG) emissions.</li>
+        <li>Implement regenerative grazing plans to restore soil carbon and biodiversity.</li>
+        <li>Convert manure and whey into value‑added biogas, fertilizer, or bio‑based materials.</li>
+        <li>Secure sustainability certifications (e.g., ISO 14001, PAS 2060, Rainforest Alliance).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Curriculum Highlights</h3>
+      <ul>
+        <li>Life‑Cycle Assessment & Carbon Foot‑Printing</li>
+        <li>Renewable Energy for Dairy (Solar, Biogas, Geo‑thermal)</li>
+        <li>Water Stewardship & Circular Processing Technologies</li>
+        <li>Regenerative Pasture & Agro‑forestry Integration</li>
+        <li>Sustainable Packaging and Supply‑Chain Traceability</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Practical Activities</h3>
+      <p>Participants conduct LCA audits on partner farms, design solar‑powered chilling units,
+         and pilot bio‑digesters that turn waste into power and fertilizer. Field visits showcase
+         carbon‑insetting projects with cooperative producers.</p>
+    </section>
+
+    <section>
+      <h3>Career Opportunities</h3>
+      <p>Graduates become sustainability managers, carbon analysts, regenerative ranch consultants,
+         or ESG (Environmental, Social & Governance) officers in dairy companies, NGOs, and
+         governmental agencies.</p>
+    </section>
+	<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+    <button class="apply-btn" onclick="openApplyModal('Sustainability')">Apply Now</button>
+    <a class="back-btn" href="programs.html">← Back to Programs</a>
+  </article>
+
+  <!-- FOOTER -->
+  <footer>© 2025 AERO DAIRY | Cultivating Climate‑Smart Milk Production</footer>
+
+  <script>
+    function openApplyModal(area){
+      alert('Modal not loaded. Paste the applyModal block & related JS here.');
+    }
+  </script>
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

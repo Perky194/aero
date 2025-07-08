@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milk Quality Issues – AERO DAIRY</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    :root {
+      --green: #02a302;
+      --light-green: #8EFE8E;
+      --dark-green: #0b590b;
+      --purple: #7e3ea1;
+      --light-purple: #b293d3;
+      --dark-purple: #4b1e63;
+      --panel-bg: rgba(18, 18, 18, 0.85);
+      --text-light: #c9e4de;
+      --highlight-green: #1ad43a; /* brighter green, no blur */
+      --highlight-purple: #b875d8; /* brighter purple, no blur */
+      --red: #e02b2b;
+      --back-btn-bg: #4b1e63;
+      --back-btn-hover-bg: #7e3ea1;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--light-green), var(--light-purple));
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--green), var(--purple));
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+      user-select: none;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--light-green);
+      text-shadow: 1px 1px 3px var(--dark-green);
+      margin: 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 24px auto 40px auto;
+      padding: 12px 28px;
+      background-color: var(--back-btn-bg);
+      color: var(--light-green);
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      box-shadow: 0 0 12px var(--back-btn-bg);
+      display: flex;
+      align-items: center;
+      max-width: 180px;
+      justify-content: center;
+      margin-left: 24px;
+    }
+
+    .back-btn i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .back-btn:hover,
+    .back-btn:focus {
+      background-color: var(--back-btn-hover-bg);
+      color: var(--light-purple);
+      box-shadow: 0 0 15px var(--back-btn-hover-bg);
+      outline: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      background: var(--panel-bg);
+      padding: 40px 40px 50px 40px;
+      border-radius: 14px;
+      animation: fadeIn 1.3s ease forwards;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.55);
+      user-select: text;
+    }
+
+    h2 {
+      border-left: 6px solid var(--green);
+      padding-left: 14px;
+      margin-bottom: 20px;
+      color: var(--highlight-green);
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 2px var(--dark-green);
+    }
+
+    h3 {
+      color: var(--highlight-purple);
+      font-weight: 700;
+      margin-bottom: 10px;
+      margin-top: 22px;
+      font-size: 1.3rem;
+      text-shadow: 0 0 3px var(--dark-purple);
+    }
+
+    p {
+      margin-bottom: 22px;
+      font-size: 1.1rem;
+      color: var(--highlight-green);
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 12px 0 30px 28px;
+      font-size: 1.1rem;
+      color: var(--highlight-purple);
+      line-height: 1.6;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    ol {
+      margin-left: 28px;
+      color: var(--highlight-green);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    ol li {
+      margin-bottom: 16px;
+    }
+
+    .highlight-green {
+      color: var(--highlight-green);
+      font-weight: 700;
+      text-shadow: none;
+    }
+
+    .highlight-purple {
+      color: var(--highlight-purple);
+      font-weight: 700;
+      text-shadow: none;
+    }
+
+    .read-more-toggle {
+      background-color: var(--green);
+      color: var(--light-purple);
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 10px 22px;
+      cursor: pointer;
+      margin: 15px 0 35px 0;
+      display: block;
+      width: fit-content;
+      box-shadow: 0 0 12px var(--green);
+      transition: background-color 0.3s ease;
+    }
+
+    .read-more-toggle:hover,
+    .read-more-toggle:focus {
+      background-color: var(--purple);
+      color: var(--light-green);
+      box-shadow: 0 0 15px var(--purple);
+      outline: none;
+    }
+
+    .read-more-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease, padding 0.5s ease;
+      padding-left: 0;
+      margin-bottom: 0;
+      color: var(--highlight-purple);
+      user-select: text;
+      font-size: 1.1rem;
+      line-height: 1.65;
+    }
+
+    .read-more-content.open {
+      max-height: 2200px; /* enough for ~1.5 pages */
+      padding-left: 14px;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Milk Quality Issues</h1>
+  </header>
+
+  <a href="problemsolved.html" class="back-btn" aria-label="Back to problem solved">
+    <i class="fa fa-arrow-left"></i> Back to problem solved
+  </a>
+
+  <main class="container" role="main" aria-labelledby="problem-title">
+    <section aria-labelledby="problem-title">
+      <h2 id="problem-title">📌 How the Problem is Identified</h2>
+      <p>
+        Milk quality issues are identified through several observable signs and testing procedures. Farmers, milk processors, and consumers may notice <span class="highlight-green">changes in milk smell, taste, color, or consistency</span>.
+      </p>
+      <p>
+        Common identification methods include:
+      </p>
+      <ul>
+        <li>Visual inspection for clots, discoloration, or watery appearance.</li>
+        <li>Smell tests to detect sourness or off-odors.</li>
+        <li>Simple field tests for acidity and presence of contaminants.</li>
+        <li>Laboratory analysis checking for bacterial contamination, antibiotic residues, and somatic cell counts.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-1" onclick="toggleReadMore(1)">
+        Read More
+      </button>
+      <div id="readmore-1" class="read-more-content" aria-hidden="true">
+        <p>
+          In Nyandarua County, many farmers rely on sensory observation and simple acidity tests as formal lab services may be costly or unavailable. Regular milk quality testing helps detect issues early, preventing spoilage and health risks.
+        </p>
+        <p>
+          Educating farmers on recognizing early signs and simple testing methods is critical for improving overall milk quality in the region.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="causes-title">
+      <h2 id="causes-title">🔍 Underlying Causes of Milk Quality Issues</h2>
+      <ul>
+        <li><span class="highlight-green">Poor hygiene during milking and storage</span> — contamination by dirt, manure, or unclean equipment.</li>
+        <li><span class="highlight-purple">Mastitis and other udder infections</span> — leading to high somatic cell counts and abnormal milk.</li>
+        <li><span class="highlight-green">Improper cooling and storage</span> — causing bacterial growth and milk spoilage.</li>
+        <li><span class="highlight-purple">Antibiotic residues and drug contamination</span> — from untreated withdrawal periods.</li>
+        <li><span class="highlight-green">Feed contaminants and toxins</span> — mycotoxins or chemicals entering milk via fodder.</li>
+        <li><span class="highlight-purple">Adulteration with water or other substances</span> — reducing milk purity and safety.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-2" onclick="toggleReadMore(2)">
+        Read More
+      </button>
+      <div id="readmore-2" class="read-more-content" aria-hidden="true">
+        <p>
+          Hygiene lapses during milking and handling expose milk to contamination by bacteria and foreign matter, significantly lowering quality.
+        </p>
+        <p>
+          Mastitis causes the udder to produce abnormal milk with increased white blood cells, which affects taste and safety.
+        </p>
+        <p>
+          Cooling milk immediately after milking slows bacterial growth. In Nyandarua County, lack of access to refrigeration can accelerate spoilage.
+        </p>
+        <p>
+          Failure to observe drug withdrawal periods leads to antibiotic residues, which can harm consumers and cause milk rejection.
+        </p>
+        <p>
+          Contaminated feed can transfer toxins or chemicals to milk, posing serious health risks.
+        </p>
+        <p>
+          Adulteration, often driven by economic pressures, compromises milk integrity and damages consumer trust.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="consequences-title">
+      <h2 id="consequences-title">⚠️ Consequences of Milk Quality Issues</h2>
+      <p>
+        Poor milk quality negatively impacts <span class="highlight-green">public health</span>, farmer income, and the reputation of the dairy sector in Nyandarua County.
+      </p>
+      <ul>
+        <li>Health risks to consumers due to contaminated or adulterated milk.</li>
+        <li>Milk rejection by processors, causing financial losses to farmers.</li>
+        <li>Lower shelf life and increased spoilage of milk products.</li>
+        <li>Loss of consumer confidence in local dairy products.</li>
+        <li>Potential legal and regulatory sanctions for non-compliance.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-3" onclick="toggleReadMore(3)">
+        Read More
+      </button>
+      <div id="readmore-3" class="read-more-content" aria-hidden="true">
+        <p>
+          The economic fallout from milk quality problems can be severe, discouraging smallholder farmers and threatening livelihoods.
+        </p>
+        <p>
+          Public health risks include foodborne illnesses and antibiotic resistance.
+        </p>
+        <p>
+          Strengthening milk quality controls and farmer education is essential to reduce these consequences.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="solution-title">
+      <h2 id="solution-title">🌱 AERO DAIRY's Detailed Solutions and Best Practices</h2>
+      <p>
+        <span class="highlight-green">AERO DAIRY</span> applies comprehensive, practical solutions to address milk quality challenges faced by farmers in Nyandarua County.
+      </p>
+
+      <h3>Step-by-Step Best Practices for Ensuring Milk Quality</h3>
+
+      <ol>
+        <li>
+          <strong>Clean Milking Environment</strong>: Always milk in a clean, sheltered area. Ensure hands and cow udders are washed and dried before milking.
+        </li>
+        <li>
+          <strong>Sanitize Equipment</strong>: Clean and disinfect all milking utensils, containers, and storage tanks before and after use.
+        </li>
+        <li>
+          <strong>Manage Udder Health</strong>: Regularly check cows for mastitis signs and use veterinary treatments promptly. Maintain proper hygiene during milking to prevent infections.
+        </li>
+        <li>
+          <strong>Immediate Cooling</strong>: Cool milk quickly after milking to below 4°C (39°F) to slow bacterial growth. Use cold water baths or refrigeration if available.
+        </li>
+        <li>
+          <strong>Observe Drug Withdrawal Periods</strong>: Ensure treated cows are milked separately and milk discarded during withdrawal periods to avoid residues.
+        </li>
+        <li>
+          <strong>Feed Quality Control</strong>: Provide clean, uncontaminated fodder to prevent toxins or chemicals entering milk.
+        </li>
+        <li>
+          <strong>Prevent Adulteration</strong>: Educate farmers on risks of adulterating milk with water or chemicals, and promote transparency and trust.
+        </li>
+        <li>
+          <strong>Regular Testing</strong>: Implement routine milk quality testing using simple field kits or laboratory services to monitor for bacterial counts, somatic cells, and residues.
+        </li>
+        <li>
+          <strong>Training and Education</strong>: Conduct farmer workshops and training sessions on milk hygiene, quality standards, and best practices.
+        </li>
+        <li>
+          <strong>Record Keeping</strong>: Maintain detailed records of milking, health treatments, and milk quality results to track improvements and issues.
+        </li>
+      </ol>
+
+      <h3>Additional Recommendations</h3>
+      <ul>
+        <li>Use clean water sources for washing and milk handling.</li>
+        <li>Invest in affordable cooling technologies suitable for smallholder farms.</li>
+        <li>Encourage cooperative milk collection centers to provide quality control support.</li>
+      </ul>
+
+      <p>
+        Through these targeted actions, <span class="highlight-green">AERO DAIRY</span> helps Nyandarua farmers improve milk quality, protect consumer health, and increase market access and income.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function toggleReadMore(sectionNumber) {
+      const btn = document.querySelector(`.read-more-toggle[onclick="toggleReadMore(${sectionNumber})"]`);
+      const content = document.getElementById(`readmore-${sectionNumber}`);
+      const isOpen = content.classList.contains("open");
+
+      if (isOpen) {
+        content.classList.remove("open");
+        content.setAttribute("aria-hidden", "true");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Read More";
+      } else {
+        content.classList.add("open");
+        content.setAttribute("aria-hidden", "false");
+        btn.setAttribute("aria-expanded", "true");
+        btn.textContent = "Read Less";
+      }
+    }
+  </script>
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

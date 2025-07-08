@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SCC Impact Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #007a33;
+    }
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+    }
+    button {
+      background: #007a33;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e9f5ea;
+      border-left: 5px solid #007a33;
+    }
+	 .back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 18px;
+    background-color: #007a33;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-btn:hover {
+    background-color: #005f29;
+  }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>SCC Impact Calculator</h1>
+    <p>Estimate your milk and revenue loss due to high SCC levels.</p>
+    <label for="scc">Enter SCC (cells/ml):</label>
+    <input type="number" id="scc" placeholder="e.g. 500000">
+
+    <label for="milkPrice">Milk Price (per liter):</label>
+    <input type="number" id="milkPrice" step="0.01" placeholder="e.g. 0.35">
+
+    <label for="litresPerCow">Liters per cow/day:</label>
+    <input type="number" id="litresPerCow" placeholder="e.g. 25">
+
+    <label for="numCows">Number of cows:</label>
+    <input type="number" id="numCows" placeholder="e.g. 50">
+
+    <button onclick="calculateLoss()">Calculate Impact</button>
+
+    <div id="output" class="result"></div>
+  </div>
+
+  <script>
+    function calculateLoss() {
+      const scc = parseInt(document.getElementById("scc").value);
+      const milkPrice = parseFloat(document.getElementById("milkPrice").value);
+      const litres = parseFloat(document.getElementById("litresPerCow").value);
+      const cows = parseInt(document.getElementById("numCows").value);
+
+      let lossFactor = 0;
+      if (scc > 200000 && scc <= 400000) lossFactor = 0.05;
+      else if (scc > 400000 && scc <= 700000) lossFactor = 0.10;
+      else if (scc > 700000) lossFactor = 0.20;
+
+      const totalMilk = litres * cows;
+      const lostMilk = totalMilk * lossFactor;
+      const lostRevenue = lostMilk * milkPrice;
+
+      document.getElementById("output").innerHTML = `
+        <strong>Total Milk (daily):</strong> ${totalMilk.toFixed(2)} liters<br>
+        <strong>Estimated Loss:</strong> ${lostMilk.toFixed(2)} liters/day<br>
+        <strong>Revenue Loss:</strong> $${lostRevenue.toFixed(2)} per day
+      `;
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mastitis Prevention Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8f5;
+      margin: 20px;
+    }
+    .checklist {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007a33;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    button {
+      margin-top: 20px;
+      background: #007a33;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .status {
+      margin-top: 15px;
+      background: #e9f5ea;
+      padding: 10px;
+      border-left: 5px solid #007a33;
+    }
+  </style>
+</head>
+<body>
+  <div class="checklist">
+    <h2>Mastitis Prevention Daily Checklist</h2>
+    <p>Tick off practices completed today:</p>
+    <ul id="checklist">
+      <li><input type="checkbox">Check udder for swelling or abnormality</li>
+      <li><input type="checkbox">Clean and disinfect teats before milking</li>
+      <li><input type="checkbox">Use separate towels per cow</li>
+      <li><input type="checkbox">Use post-milking teat dip</li>
+      <li><input type="checkbox">Milk infected cows last</li>
+      <li><input type="checkbox">Regularly maintain milking machine</li>
+      <li><input type="checkbox">Provide clean, dry bedding</li>
+      <li><input type="checkbox">Record all cases of mastitis</li>
+    </ul>
+    <button onclick="checkCompletion()">Check Completion</button>
+    <div class="status" id="checkStatus"></div>
+  </div>
+
+  <script>
+    function checkCompletion() {
+      const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+
+      const total = checkboxes.length;
+      const status = document.getElementById("checkStatus");
+
+      if (checkedCount === total) {
+        status.innerHTML = "✅ Excellent! All tasks completed.";
+      } else {
+        status.innerHTML = `⚠️ You completed ${checkedCount} out of ${total} tasks. Keep improving!`;
+      }
+    }
+  </script>
+  <a href="veterinary.html" class="back-btn">← Back to Veterinary Tools</a>
+  
+</body>
+</html>

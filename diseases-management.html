@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diseases Management – AERO DAIRY</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    :root {
+      --green:#02a302;
+      --light-green:#8EFE8E;
+      --dark-green:#0b590b;
+      --purple:#7e3ea1;
+      --light-purple:#b293d3;
+      --dark-purple:#4b1e63;
+      --panel-bg:rgba(18,18,18,0.85);
+      --text-light:#c9e4de;
+      --highlight-green:#1ad43a;
+      --highlight-purple:#b875d8;
+      --red:#e02b2b;
+      --back-btn-bg:#4b1e63;
+      --back-btn-hover-bg:#7e3ea1;
+    }
+    body {
+      font-family:"Segoe UI",Verdana,sans-serif;
+      background:linear-gradient(135deg,var(--light-green),var(--light-purple));
+      color:var(--text-light);
+      margin:0;padding:0;overflow-x:hidden;line-height:1.6;
+    }
+    header {
+      background:linear-gradient(to right,var(--green),var(--purple));
+      padding:20px;text-align:center;position:sticky;top:0;z-index:10;
+      box-shadow:0 3px 10px rgba(0,0,0,0.7);user-select:none;
+    }
+    header h1 {
+      font-size:2.3rem;font-weight:700;color:var(--light-green);
+      text-shadow:1px 1px 3px var(--dark-green);margin:0;
+    }
+    .back-btn {
+      display:inline-flex;margin:24px 0 40px 24px;padding:12px 28px;
+      background-color:var(--back-btn-bg);color:var(--light-green);
+      border:none;border-radius:25px;font-weight:700;font-size:1rem;
+      text-decoration:none;cursor:pointer;transition:.35s;
+      box-shadow:0 0 12px var(--back-btn-bg);align-items:center;
+    }
+    .back-btn i { margin-right:10px;font-size:1.2rem; }
+    .back-btn:hover, .back-btn:focus {
+      background-color:var(--back-btn-hover-bg);color:var(--light-purple);
+      box-shadow:0 0 15px var(--back-btn-hover-bg);outline:none;
+    }
+    .container {
+      max-width:900px;margin:0 auto 60px;padding:40px;
+      background:var(--panel-bg);border-radius:14px;
+      animation:fadeIn 1.3s ease forwards;
+      box-shadow:inset 0 0 20px rgba(0,0,0,0.55);user-select:text;
+    }
+    h2 {
+      border-left:6px solid var(--green);padding-left:14px;margin-bottom:20px;
+      color:var(--highlight-green);font-weight:700;font-size:1.8rem;
+      text-shadow:1px 1px 2px var(--dark-green);
+    }
+    h3 {
+      color:var(--highlight-purple);font-weight:700;margin-top:22px;
+      margin-bottom:10px;font-size:1.3rem;text-shadow:0 0 3px var(--dark-purple);
+    }
+    p {
+      margin-bottom:22px;font-size:1.1rem;color:var(--highlight-green);
+      text-align:justify;
+    }
+    ul,ol {
+      margin-left:28px;margin-bottom:30px;
+      font-size:1.1rem;line-height:1.6;color:var(--highlight-purple);
+    }
+    ul li, ol li { margin-bottom:12px; }
+    .highlight-green { color:var(--highlight-green);font-weight:700;text-shadow:none; }
+    .highlight-purple { color:var(--highlight-purple);font-weight:700;text-shadow:none; }
+    .read-more-toggle {
+      background-color:var(--green);color:var(--light-purple);
+      border:none;border-radius:30px;
+      font-weight:700;font-size:1rem;padding:10px 22px;
+      cursor:pointer;margin:15px 0 35px 0;display:block;
+      width:fit-content;box-shadow:0 0 12px var(--green);
+      transition:background-color .3s;
+    }
+    .read-more-toggle:hover, .read-more-toggle:focus {
+      background-color:var(--purple);color:var(--light-green);
+      box-shadow:0 0 15px var(--purple);outline:none;
+    }
+    .read-more-content {
+      max-height:0;overflow:hidden;
+      transition:max-height .8s ease,padding .5s;
+      padding-left:0;margin-bottom:0;
+      color:var(--highlight-purple);line-height:1.65;
+    }
+    .read-more-content.open {
+      max-height:2200px;padding-left:14px;margin-bottom:30px;
+    }
+    @keyframes fadeIn {
+      from {opacity:0;transform:translateY(25px);} to{opacity:1;transform:translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Diseases Management</h1></header>
+  <a href="problemsolved.html" class="back-btn"><i class="fa fa-arrow-left"></i> Back to problem solved</a>
+  <main class="container" role="main">
+    <section>
+      <h2>🩺 How the Problem is Identified</h2>
+      <p>
+        Dairy diseases are first noted when farmers observe changes in their cows—such as reduced appetite, tiredness, or unusual milk. A cure starts with recognizing these early warning signs.
+      </p>
+      <ul>
+        <li><strong>Visual & behavioral checks:</strong> note if a cow is off feed, lethargic, limping, or has nasal discharge.</li>
+        <li><strong>Temperature & vital signs:</strong> fever, elevated respiration, and fast heartbeat.</li>
+        <li><strong>Milk testing:</strong> using the California Mastitis Test (CMT) to detect udder infections or somatic cell count rises.</li>
+        <li><strong>Physical exam:</strong> checking udders, hooves, eyes for illness signs.</li>
+        <li><strong>Lab diagnostics (when possible):</strong> send blood or milk samples to veterinary labs for conclusive diagnosis.
+        </li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-1" onclick="toggleReadMore(1)">Read More</button>
+      <div id="readmore-1" class="read-more-content" aria-hidden="true">
+        <p>
+          In Nyandarua County, veterinary officers and extension staff use mobile units and community clinics to confirm diseases like East Coast Fever (ECF), Foot-and-Mouth Disease (FMD) and mastitis quickly—helping farmers take action early and stop outbreaks.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🔍 Underlying Causes</h2>
+      <ul>
+        <li><span class="highlight-green">Weak farm biosecurity</span>: cows mix at shared grazing grounds, enabling disease spread.</li>
+        <li><span class="highlight-purple">Irregular vaccination</span>: missed or late vaccinations increase risk to preventable diseases.</li>
+        <li><span class="highlight-green">Parasite infestation</span>: unmanaged ticks and worms diminish cow immunity.</li>
+        <li><span class="highlight-purple">Stress and malnutrition</span>: during droughts or due to poor feeding, cows become more vulnerable.</li>
+        <li><span class="highlight-green">Unsanitary milking/housing</span>: dirt and bacteria in barns and milking tools lead to infections.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-2" onclick="toggleReadMore(2)">Read More</button>
+      <div id="readmore-2" class="read-more-content" aria-hidden="true">
+        <p>
+          Disease causes often overlap. For example, poor hygiene increases mastitis rates, and malnutrition reduces disease resistance. Seasonal factors like rain or drought can spike parasite prevalence and disease outbreaks in Nyandarua.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>⚠️ Consequences</h2>
+      <ul>
+        <li><span class="highlight-green">Poor milk output and quality:</span> sick cows yield less, milk may have blood, pus, or drug residues.</li>
+        <li><span class="highlight-purple">High treatment costs:</span> medicines, vet fees, and isolation reduce profitability.</li>
+        <li><span class="highlight-green">Higher mortality:</span> severe outbreaks like ECF or FMD can kill herds.</li>
+        <li><span class="highlight-purple">Public health risk:</span> zoonotic diseases such as brucellosis threaten communities.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-3" onclick="toggleReadMore(3)">Read More</button>
+      <div id="readmore-3" class="read-more-content" aria-hidden="true">
+        <p>
+          Beyond health impacts, disease outbreaks shake farmers’ confidence, destabilize milk supply chains, and force some families out of farming. For communities in Nyandarua, this means economic hardship and disrupted nutrition.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🌱 AERO DAIRY’s Detailed Best Practices</h2>
+      <p>
+        AERO DAIRY’s approach combines prevention, early detection, treatment, and education—empowering farmers to build healthy herds and sustainable income.
+      </p>
+
+      <h3>Step‑by‑Step Disease Management Protocol</h3>
+      <ol>
+        <li>
+          <strong>Farm Biosecurity:</strong>
+          <ul>
+            <li>Install fences to control cow movement.</li>
+            <li>Clean boots and equipment at entry points.</li>
+            <li>Restrict outside animals from entering your farm.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Vaccination Schedule:</strong>
+          <ul>
+            <li>Follow district vet calendar for ECF, FMD, anthrax, blackquarter.</li>
+            <li>Give boosters and maintain vaccine records.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Parasite Control:</strong>
+          <ul>
+            <li>Apply acaricide dip every 4–6 weeks to control ticks.</li>
+            <li>Use dewormers seasonally (start/end of rainy season).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Nutrition for Immunity:</strong>
+          <ul>
+            <li>Feed quality fodder and give mineral supplements (selenium, zinc).</li>
+            <li>Provide extra feed to sick cows to support recovery.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Hygienic Milking:</strong>
+          <ul>
+            <li>Wash udders with clean water and antiseptic before and after milking.</li>
+            <li>Use disposable or sanitized cloths and discard infected milk.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Isolation and Treatment:</strong>
+          <ul>
+            <li>Isolate sick animals in a clean pen.</li>
+            <li>Contact vet or extension officer immediately.</li>
+            <li>Follow full medication or vaccination regimen.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Record‑Keeping:</strong>
+          <ul>
+            <li>Document vaccination dates, treatments, and recovery.</li>
+            <li>Track disease patterns to plan preventive measures.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Farmer Training & Awareness:</strong>
+          <ul>
+            <li>Attend field schools to identify early symptoms and maintain herd health.</li>
+            <li>Share disease alerts through farmer networks and WhatsApp groups.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Vet & Extension Linkage:</strong>
+          <ul>
+            <li>Set up local vet visits for herd checks.</li>
+            <li>Coordinate with county animal health officers for resources.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>Additional Tips</h3>
+      <ul>
+        <li>Keep clean water in troughs—disease often spreads via water sources.</li>
+        <li>Rotate grazing areas to break parasite life cycles.</li>
+        <li>Consider communal spray races for cost-effective tick control.</li>
+      </ul>
+
+      <p>
+        By diligently following this protocol, even farmers with limited experience can significantly reduce disease incidence, lower treatment costs, and boost milk production—helping families thrive in Nyandarua County.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function toggleReadMore(n) {
+      const btn = document.querySelector(`.read-more-toggle[aria-controls="readmore-${n}"]`);
+      const cnt = document.getElementById(`readmore-${n}`);
+      const open = cnt.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open);
+      cnt.setAttribute("aria-hidden", !open);
+      btn.textContent = open ? "Read Less" : "Read More";
+    }
+  </script>
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AERO DAIRY – Leadership</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #2e7d32, #ffa000, #6a1b9a);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .team-section, .action-gallery {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #2e7d32;
+      text-transform: uppercase;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .team-name {
+      font-size: 1.2rem;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .team-role {
+      font-size: 1rem;
+      color: #ffa000;
+    }
+
+    .speech {
+      font-size: 0.95rem;
+      color: #444;
+      margin-top: 10px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-left: 4px solid #6a1b9a;
+      text-align: left;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #6a1b9a;
+    }
+	.back-btn{
+      display:inline-block;
+      margin:28px auto 0;
+      padding:10px 26px;
+      background:#00695c;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:600;
+      color:#fff;
+      cursor:pointer;
+      transition:background .3s,transform .3s;
+    }
+    .back-btn:before{content:"← ";}
+    .back-btn:hover{
+      background:#00a88e;
+      transform:scale(1.05)
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Leadership Team – AERO DAIRY
+  </header>
+
+  <!-- Team Members -->
+  <section class="team-section">
+    <div class="section-title">Meet Our Leaders</div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="ceo2.jpeg.jpeg" alt="CEO" class="team-photo" />
+        <div class="team-name">Eng. Philis Mwihaki</div>
+        <div class="team-role">Chief Executive Officer (CEO)</div>
+        <p class="speech">
+          At AERO DAIRY, we lead with purpose and sustainability. <br>
+          Our goal is to empower communities through dairy innovation. <br>
+          We ensure animal health and nutrition are prioritized. <br>
+          Together, we’re building a future of clean, quality milk.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <img src="manager.jpeg.jpeg" alt="Manager" class="team-photo" />
+        <div class="team-name">Mr. Brian Otieno</div>
+        <div class="team-role">Operations Manager</div>
+        <p class="speech">
+          Every process we manage affects milk quality. <br>
+          My role ensures smooth daily operations on the farm. <br>
+          We’re committed to excellence from shed to shelf. <br>
+          Transparency and efficiency guide our work.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <img src="ceo.jpeg.jpeg" alt="Supervisor" class="team-photo" />
+        <div class="team-name">Ms. Grace Nyambura</div>
+        <div class="team-role">Farm Supervisor</div>
+        <p class="speech">
+          I supervise daily activities to maintain hygiene and standards. <br>
+          We track cow behavior, feeding, and comfort. <br>
+          A happy cow means better milk. <br>
+          My team ensures discipline in every task.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <img src="nutri.jpeg" alt="Nutritionist" class="team-photo" />
+        <div class="team-name">Mr. David Kimani</div>
+        <div class="team-role">Animal Nutritionist</div>
+        <p class="speech">
+          Our feeding plans are tailored per cow needs. <br>
+          Nutrition equals productivity and health. <br>
+          We blend natural fodder with supplements. <br>
+          It's science and care combined daily.
+        </p>
+      </div>
+
+      <div class="team-card">
+        <img src="	doc.jpeg" alt="Veterinary Officer" class="team-photo" />
+        <div class="team-name">Dr. Jane Wanjiku</div>
+        <div class="team-role">Veterinary Officer</div>
+        <p class="speech">
+          I monitor cow health and disease prevention. <br>
+          Vaccination and deworming schedules are strictly followed. <br>
+          Animal well-being is the heart of AERO DAIRY. <br>
+          I treat every cow like a patient in my clinic.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Action Images -->
+  <section class="action-gallery">
+    <div class="section-title">Leadership in Action</div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="board.jpeg" alt="Meeting with board">
+        <p class="speech">
+          Strategic planning session to expand dairy production. <br>
+          Leaders reviewed milk quality benchmarks. <br>
+          Discussions included youth training in dairy careers. <br>
+          Outcome: launch of new internship program.
+        </p>
+      </div>
+      <div class="gallery-item">
+        <img src="cowf.jpeg" alt="Visiting cow field">
+        <p class="speech">
+          Field inspection with the vet and nutrition team. <br>
+          They evaluated grazing rotation and cow condition. <br>
+          Ensured mineral blocks were placed correctly. <br>
+          Promoted green feed sustainability efforts.
+        </p>
+      </div>
+      <div class="gallery-item">
+        <img src="store.jpeg" alt="Inspecting silage crops">
+        <p class="speech">
+          Team examined fodder reserves and silage quality. <br>
+          Crops are essential to our feeding strategy. <br>
+          Discussions on expanding land for maize and Napier. <br>
+          Next step: Introduce climate-smart agriculture tools.
+        </p>
+      </div>
+      <div class="gallery-item">
+        <img src="inventory.jpeg" alt="Checking medicine and supplies">
+        <p class="speech">
+          Inventory check of veterinary medicine stocks. <br>
+          Verified expiry dates and secure storage. <br>
+          Team ensured access to vaccines and first aid. <br>
+          Safety and biosecurity are top priorities.
+        </p>
+      </div>
+      <div class="gallery-item">
+        <img src="shed.jpeg" alt="Inside cow shed">
+        <p class="speech">
+          Inspection of milking shed for cleanliness. <br>
+          Maintenance check of equipment and drainage. <br>
+          Emphasis on minimizing cow stress during milking. <br>
+          All protocols aligned with hygiene standards.
+        </p>
+      </div>
+      <div class="gallery-item">
+        <img src="reviw.jpg" alt="Team discussion">
+        <p class="speech">
+          Monthly performance review and training recap. <br>
+          Staff recognized for improving record-keeping. <br>
+          Introduced ideas for community dairy outreach. <br>
+          Focus: teamwork, accountability, leadership growth.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- BACK BUTTON -->
+<button class="back-btn" onclick="window.location.href='dashboard.php'">
+  Back to Dashboard
+</button>
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+	<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

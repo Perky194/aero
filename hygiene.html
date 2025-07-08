@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+/* Base Styles */
+:root {
+    --primary-color: #6a0dad; /* Purple */
+    --secondary-color: #4CAF50; /* Green */
+    --accent-color: #9c27b0; /* Lighter purple */
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --text-color: #ffffff; /* White for text on dark backgrounds */
+    --text-dark: #333333; /* Dark for text on light backgrounds */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.container {
+    display: flex;
+    min-height: calc(100vh - 180px); /* Adjust based on header/footer height */
+}
+
+/* Table of Contents Styles */
+.toc-container {
+    width: 30%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 1.5rem;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.toc-header h2 {
+    font-size: 1.5rem;
+}
+
+#toggle-toc {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.toc {
+    padding-right: 1rem;
+}
+
+.toc ul {
+    list-style-type: none;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.toc li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+
+.toc a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+}
+
+.toc a:hover, .toc a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 1rem;
+}
+
+.toc .toc-h2 {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.toc .toc-h3 {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Main Content Styles */
+.content {
+    width: 70%;
+    padding: 2rem;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.content-section h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.content-section h4 {
+    color: var(--secondary-color);
+    margin: 1.2rem 0 0.8rem;
+    font-size: 1.2rem;
+}
+
+.content-body {
+    padding: 0 1rem;
+}
+
+.content-body p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.content-body ul, .content-body ol {
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+}
+
+.content-body li {
+    margin-bottom: 0.5rem;
+}
+
+.content-body strong {
+    color: var(--primary-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .toc-container {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    #toggle-toc {
+        display: block;
+    }
+    
+    .toc {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .toc.active {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .content-body {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
+    
+    .content-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .content-body ul, .content-body ol {
+        margin-left: 1.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: none;
+        color: #000;
+    }
+    
+    .toc-container {
+        display: none;
+    }
+    
+    .content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    header, footer {
+        display: none;
+    }
+    
+    .content-section {
+        page-break-inside: avoid;
+    }
+}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygiene & Housing Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Comprehensive Guide to Hygiene & Proper Housing</h1>
+        <p>Essential information for healthy living environments</p>
+    </header>
+    
+    <div class="container">
+        <aside class="toc-container">
+            <div class="toc-header">
+                <h2>Table of Contents</h2>
+                <button id="toggle-toc" class="mobile-only">☰</button>
+            </div>
+            <nav id="toc" class="toc">
+                <!-- Auto-generated by JavaScript -->
+            </nav>
+        </aside>
+        
+        <main class="content">
+            <section id="introduction" class="content-section">
+                <h2>Introduction to Hygiene and Housing</h2>
+                <div class="content-body">
+                    <p>Proper hygiene and adequate housing are fundamental human rights that significantly impact health, well-being, and quality of life. This comprehensive guide explores all aspects of maintaining hygienic living conditions and understanding housing requirements for optimal health.</p>
+                    
+                    <h3>The Connection Between Housing and Health</h3>
+                    <p>The quality of housing directly affects physical and mental health outcomes. Poor housing conditions can lead to respiratory diseases, injuries, mental health issues, and the spread of infectious diseases. According to the World Health Organization (WHO), approximately 13% of urban residents in developing countries live in slums with inadequate sanitation and housing conditions.</p>
+                    
+                    <h3>Historical Perspective</h3>
+                    <p>The importance of proper housing and hygiene has been recognized since ancient civilizations. The Indus Valley Civilization (3300-1300 BCE) had sophisticated drainage systems and private bathrooms in homes. Ancient Rome developed aqueducts and public baths. However, during the Middle Ages, poor sanitation contributed to devastating pandemics like the Black Death.</p>
+                    
+                    <p>The 19th century saw major advancements with the recognition of the germ theory of disease and public health movements that emphasized clean water, waste disposal, and ventilation in housing design. Today, we continue to refine standards based on scientific understanding of disease transmission and environmental health.</p>
+                    
+                    <h3>Global Standards and Variations</h3>
+                    <p>Housing and hygiene standards vary significantly worldwide due to climate, culture, and economic factors. The United Nations defines adequate housing as including:</p>
+                    <ul>
+                        <li>Legal security of tenure</li>
+                        <li>Availability of services, materials, facilities and infrastructure</li>
+                        <li>Affordability</li>
+                        <li>Habitability (adequate space, protection from elements)</li>
+                        <li>Accessibility</li>
+                        <li>Location (access to employment, healthcare, schools)</li>
+                        <li>Cultural adequacy</li>
+                    </ul>
+                    
+                    <p>This guide will explore these aspects in detail, providing practical information for individuals, families, and communities to improve their living conditions regardless of their current circumstances.</p>
+                </div>
+            </section>
+            
+            <section id="personal-hygiene" class="content-section">
+                <h2>Personal Hygiene Practices</h2>
+                <div class="content-body">
+                    <p>Personal hygiene refers to practices that maintain cleanliness and health of the body. These practices are essential for preventing disease, maintaining social acceptance, and promoting overall well-being.</p>
+                    
+                    <h3>Hand Hygiene</h3>
+                    <p>Proper handwashing is the single most effective way to prevent the spread of infectious diseases. The CDC recommends washing hands:</p>
+                    <ul>
+                        <li>Before, during, and after preparing food</li>
+                        <li>Before eating</li>
+                        <li>After using the toilet</li>
+                        <li>After handling garbage</li>
+                        <li>After touching animals</li>
+                        <li>After caring for someone sick</li>
+                        <li>After blowing your nose, coughing, or sneezing</li>
+                    </ul>
+                    
+                    <h4>Proper Handwashing Technique</h4>
+                    <ol>
+                        <li>Wet hands with clean, running water (warm or cold)</li>
+                        <li>Apply soap and lather by rubbing hands together</li>
+                        <li>Scrub all surfaces (backs, between fingers, under nails) for at least 20 seconds</li>
+                        <li>Rinse thoroughly under running water</li>
+                        <li>Dry with a clean towel or air dry</li>
+                    </ol>
+                    
+                    <p>When soap and water aren't available, use an alcohol-based hand sanitizer with at least 60% alcohol. However, sanitizers don't eliminate all types of germs and aren't effective when hands are visibly dirty or greasy.</p>
+                    
+                    <h3>Oral Hygiene</h3>
+                    <p>Dental hygiene prevents tooth decay, gum disease, and bad breath while contributing to overall health. Poor oral health has been linked to cardiovascular disease, diabetes complications, and respiratory infections.</p>
+                    
+                    <h4>Recommended Oral Care Routine</h4>
+                    <ul>
+                        <li>Brush teeth twice daily with fluoride toothpaste</li>
+                        <li>Use proper brushing technique (45-degree angle, gentle circular motions)</li>
+                        <li>Floss daily to remove plaque between teeth</li>
+                        <li>Replace toothbrush every 3-4 months or when bristles fray</li>
+                        <li>Limit sugary foods and drinks</li>
+                        <li>Visit dentist regularly for check-ups and cleanings</li>
+                    </ul>
+                    
+                    <h3>Bathing and Skin Care</h3>
+                    <p>Regular bathing removes dirt, sweat, dead skin cells, and bacteria that can cause odor and infections. However, excessive washing can strip skin of natural oils, leading to dryness and irritation.</p>
+                    
+                    <h4>Bathing Recommendations</h4>
+                    <ul>
+                        <li>Shower or bathe at least 2-3 times weekly (more in hot climates or with physical activity)</li>
+                        <li>Use mild, pH-balanced cleansers</li>
+                        <li>Pay attention to areas prone to odor (armpits, feet, groin)</li>
+                        <li>Moisturize after bathing to maintain skin barrier</li>
+                        <li>Change clothes and undergarments daily</li>
+                    </ul>
+                    
+                    <p>Special considerations apply for infants, elderly individuals, and people with certain medical conditions. For example, older adults may need less frequent bathing with special attention to skin hydration.</p>
+                    
+                    <h3>Hair and Nail Care</h3>
+                    <p>Proper hair and nail maintenance prevents spread of infections and parasites like lice or fungal infections.</p>
+                    
+                    <h4>Hair Care Guidelines</h4>
+                    <ul>
+                        <li>Wash hair regularly based on hair type and activity level (typically 2-3 times weekly)</li>
+                        <li>Use appropriate products for hair type (oily, dry, color-treated, etc.)</li>
+                        <li>Comb or brush hair regularly to distribute natural oils</li>
+                        <li>Avoid sharing combs, brushes, or hair accessories</li>
+                    </ul>
+                    
+                    <h4>Nail Care Guidelines</h4>
+                    <ul>
+                        <li>Keep nails clean and trimmed</li>
+                        <li>Use clean tools for manicures/pedicures</li>
+                        <li>Avoid biting nails or cuticles</li>
+                        <li>Wear gloves for wet work to prevent nail damage</li>
+                        <li>Inspect nails regularly for signs of infection or abnormalities</li>
+                    </ul>
+                    
+                    <h3>Menstrual Hygiene</h3>
+                    <p>Proper menstrual hygiene management is crucial for reproductive health and dignity. Poor practices can lead to infections and social exclusion.</p>
+                    
+                    <h4>Menstrual Hygiene Best Practices</h4>
+                    <ul>
+                        <li>Wash hands before and after changing menstrual products</li>
+                        <li>Change pads every 4-6 hours, tampons every 4-8 hours</li>
+                        <li>Wash genital area with clean water at least twice daily</li>
+                        <li>Use clean, dry undergarments</li>
+                        <li>Dispose of used products properly (wrap and bin, don't flush)</li>
+                        <li>For reusable products, wash thoroughly with soap and dry in sunlight</li>
+                    </ul>
+                    
+                    <p>Access to clean water, private sanitation facilities, and affordable menstrual products remains a challenge in many areas, requiring community-level solutions.</p>
+                </div>
+            </section>
+            
+            <section id="home-hygiene" class="content-section">
+                <h2>Home Hygiene and Sanitation</h2>
+                <div class="content-body">
+                    <p>Maintaining a clean home environment prevents the spread of disease, reduces allergens, and creates a more pleasant living space. Effective home hygiene focuses on high-touch surfaces and areas where germs proliferate.</p>
+                    
+                    <h3>Kitchen Hygiene</h3>
+                    <p>The kitchen is a hotspot for bacterial growth due to food residues and moisture. Proper practices prevent foodborne illnesses.</p>
+                    
+                    <h4>Food Storage Guidelines</h4>
+                    <ul>
+                        <li>Refrigerator at or below 40°F (4°C), freezer at 0°F (-18°C)</li>
+                        <li>Store raw meats separately and below ready-to-eat foods</li>
+                        <li>Use airtight containers for dry goods to prevent pests</li>
+                        <li>Label and date leftovers (discard after 3-4 days)</li>
+                        <li>Follow "first in, first out" principle for pantry items</li>
+                    </ul>
+                    
+                    <h4>Food Preparation Safety</h4>
+                    <ul>
+                        <li>Wash hands before handling food</li>
+                        <li>Use separate cutting boards for raw meats and produce</li>
+                        <li>Cook foods to proper internal temperatures (165°F for poultry, 145°F for whole meats)</li>
+                        <li>Avoid leaving perishable foods at room temperature >2 hours</li>
+                        <li>Thaw frozen foods in refrigerator, not on counter</li>
+                    </ul>
+                    
+                    <h4>Kitchen Cleaning</h4>
+                    <ul>
+                        <li>Clean countertops before and after food prep</li>
+                        <li>Sanitize sponges regularly (microwave damp sponge for 1 minute or run through dishwasher)</li>
+                        <li>Clean refrigerator monthly, checking for expired items</li>
+                        <li>Empty and clean crumb trays from toasters</li>
+                        <li>Clean small appliances (blenders, can openers) after each use</li>
+                    </ul>
+                    
+                    <h3>Bathroom Hygiene</h3>
+                    <p>Bathrooms accumulate moisture and organic matter that support microbial growth. Regular cleaning prevents mold and pathogen buildup.</p>
+                    
+                    <h4>Toilet Hygiene</h4>
+                    <ul>
+                        <li>Clean toilet bowl weekly with brush and disinfectant</li>
+                        <li>Disinfect toilet handle, seat, and lid regularly</li>
+                        <li>Close lid before flushing to reduce aerosolized particles</li>
+                        <li>Use toilet paper appropriately (front-to-back for women)</li>
+                        <li>Ensure proper ventilation to reduce moisture</li>
+                    </ul>
+                    
+                    <h4>Shower and Sink Maintenance</h4>
+                    <ul>
+                        <li>Clean shower weekly to prevent soap scum and mold</li>
+                        <li>Replace shower curtains when mold appears</li>
+                        <li>Clean sink drains monthly with baking soda and vinegar</li>
+                        <li>Disinfect faucet handles regularly</li>
+                        <li>Wash bath mats frequently</li>
+                    </ul>
+                    
+                    <h3>Bedroom Hygiene</h3>
+                    <p>Bedrooms should promote restful sleep while minimizing dust mites and allergens.</p>
+                    
+                    <h4>Bedding Care</h4>
+                    <ul>
+                        <li>Wash sheets weekly in hot water (130°F/54°C to kill dust mites)</li>
+                        <li>Replace pillows every 1-2 years</li>
+                        <li>Vacuum mattress regularly</li>
+                        <li>Use mattress and pillow protectors</li>
+                        <li>Air out bedding in sunlight when possible</li>
+                    </ul>
+                    
+                    <h4>Clothing Storage</h4>
+                    <ul>
+                        <li>Store clean, completely dry clothes</li>
+                        <li>Use cedar blocks or lavender sachets instead of chemical moth repellents</li>
+                        <li>Rotate seasonal clothing to prevent mustiness</li>
+                        <li>Keep dirty laundry in ventilated hamper</li>
+                    </ul>
+                    
+                    <h3>Living Areas</h3>
+                    <p>Common areas require regular attention to maintain cleanliness and indoor air quality.</p>
+                    
+                    <h4>Cleaning Schedule</h4>
+                    <ul>
+                        <li>Vacuum carpets 1-2 times weekly</li>
+                        <li>Dust surfaces with microfiber cloths (traps dust better)</li>
+                        <li>Clean windows and mirrors as needed</li>
+                        <li>Disinfect high-touch surfaces (doorknobs, light switches, remotes) weekly</li>
+                        <li>Rotate and flip cushions to even out wear</li>
+                    </ul>
+                    
+                    <h3>Waste Management</h3>
+                    <p>Proper waste disposal prevents pest infestations and environmental contamination.</p>
+                    
+                    <h4>Household Waste Practices</h4>
+                    <ul>
+                        <li>Use lined, covered trash bins</li>
+                        <li>Empty kitchen trash daily, especially with food waste</li>
+                        <li>Separate recyclables and hazardous waste</li>
+                        <li>Compost food scraps where possible</li>
+                        <li>Clean bins regularly to prevent odors and pests</li>
+                    </ul>
+                    
+                    <h3>Pet Hygiene</h3>
+                    <p>Pets contribute to household joy but require specific hygiene considerations.</p>
+                    
+                    <h4>Pet Care Guidelines</h4>
+                    <ul>
+                        <li>Designate pet feeding areas away from human food prep</li>
+                        <li>Wash food/water bowls daily</li>
+                        <li>Groom pets regularly to reduce shedding and dander</li>
+                        <li>Clean litter boxes daily (wear gloves, wash hands after)</li>
+                        <li>Vacuum pet hair frequently</li>
+                        <li>Keep pet bedding clean</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="housing-standards" class="content-section">
+                <h2>Housing Standards and Requirements</h2>
+                <div class="content-body">
+                    <p>Adequate housing provides more than just shelter—it supports physical health, mental well-being, and social development. International standards outline minimum requirements for healthy housing.</p>
+                    
+                    <h3>Structural Requirements</h3>
+                    <p>The physical structure must protect inhabitants from environmental elements and hazards.</p>
+                    
+                    <h4>Basic Structural Elements</h4>
+                    <ul>
+                        <li>Stable, durable construction resistant to weather extremes</li>
+                        <li>Weatherproof roof that doesn't leak</li>
+                        <li>Solid floors (not dirt or rough wood)</li>
+                        <li>Properly installed windows and doors that seal</li>
+                        <li>Structural integrity to resist collapse or significant damage</li>
+                        <li>Protection from flood risks where applicable</li>
+                    </ul>
+                    
+                    <h3>Space Requirements</h3>
+                    <p>Overcrowding increases disease transmission and stress while reducing privacy and sleep quality.</p>
+                    
+                    <h4>Recommended Space Standards</h4>
+                    <ul>
+                        <li>Minimum 70 sq ft (6.5 sq m) per adult</li>
+                        <li>Minimum 50 sq ft (4.6 sq m) per child</li>
+                        <li>No more than 2 people per bedroom (except couples/young children)</li>
+                        <li>Separate sleeping areas for adolescents of different genders</li>
+                        <li>At least one living/common area apart from sleeping spaces</li>
+                    </ul>
+                    
+                    <h3>Ventilation</h3>
+                    <p>Proper airflow reduces moisture, removes pollutants, and prevents respiratory issues.</p>
+                    
+                    <h4>Ventilation Standards</h4>
+                    <ul>
+                        <li>Windows equal to at least 10% of floor area in living spaces</li>
+                        <li>Mechanical ventilation in kitchens and bathrooms if windows insufficient</li>
+                        <li>Ability to cross-ventilate (openings on opposite sides)</li>
+                        <li>Ventilation for combustion appliances to prevent carbon monoxide buildup</li>
+                        <li>Air changes: 0.35 air changes per hour minimum, preferably 0.5</li>
+                    </ul>
+                    
+                    <h3>Lighting</h3>
+                    <p>Both natural and artificial lighting impact health, safety, and circadian rhythms.</p>
+                    
+                    <h4>Lighting Requirements</h4>
+                    <ul>
+                        <li>Daylight in all habitable rooms (minimum window size requirements)</li>
+                        <li>Artificial lighting sufficient for tasks without eye strain</li>
+                        <li>Night lighting for safety in hallways, bathrooms</li>
+                        <li>Glare control (window treatments where needed)</li>
+                        <li>Access to natural light shown to improve mood and sleep patterns</li>
+                    </ul>
+                    
+                    <h3>Thermal Comfort</h3>
+                    <p>Maintaining appropriate indoor temperatures prevents cold/heat-related illnesses.</p>
+                    
+                    <h4>Temperature Standards</h4>
+                    <ul>
+                        <li>Ability to maintain at least 64°F (18°C) in sleeping areas</li>
+                        <li>Ability to maintain at least 68°F (20°C) in living areas during cold weather</li>
+                        <li>Protection from excessive heat (shading, ventilation, or cooling)</li>
+                        <li>Proper insulation to maintain comfortable temperatures efficiently</li>
+                        <li>Safe heating systems that don't produce harmful emissions</li>
+                    </ul>
+                    
+                    <h3>Water Supply</h3>
+                    <p>Access to clean, running water is essential for drinking, cooking, and hygiene.</p>
+                    
+                    <h4>Water Requirements</h4>
+                    <ul>
+                        <li>Minimum 13 gallons (50 liters) per person per day</li>
+                        <li>Continuous supply of potable (drinkable) water</li>
+                        <li>Water source within house or immediate vicinity</li>
+                        <li>Safe storage if intermittent supply</li>
+                        <li>Hot water available for sanitation needs</li>
+                    </ul>
+                    
+                    <h3>Sanitation Facilities</h3>
+                    <p>Proper waste disposal prevents contamination and disease transmission.</p>
+                    
+                    <h4>Sanitation Standards</h4>
+                    <ul>
+                        <li>Private toilet for each household or shared under acceptable conditions</li>
+                        <li>Toilet connected to sewer, septic system, or properly constructed latrine</li>
+                        <li>Handwashing facility near toilet with soap and water</li>
+                        <li>Proper drainage to prevent standing water</li>
+                        <li>Garbage collection or proper disposal methods</li>
+                    </ul>
+                    
+                    <h3>Safety Features</h3>
+                    <p>Housing should minimize risks of injuries and accidents.</p>
+                    
+                    <h4>Safety Requirements</h4>
+                    <ul>
+                        <li>Smoke detectors on each level, near sleeping areas</li>
+                        <li>Carbon monoxide detectors if combustion appliances present</li>
+                        <li>Fire extinguishers in kitchen</li>
+                        <li>Safe electrical system without exposed wires</li>
+                        <li>Guardrails on elevated surfaces where falls could occur</li>
+                        <li>Non-slip surfaces in wet areas</li>
+                        <li>Childproofing where young children present</li>
+                    </ul>
+                    
+                    <h3>Accessibility</h3>
+                    <p>Housing should accommodate people with disabilities and aging populations.</p>
+                    
+                    <h4>Accessibility Features</h4>
+                    <ul>
+                        <li>Step-free entry or ramp where needed</li>
+                        <li>Doorways wide enough for wheelchairs (minimum 32 inches)</li>
+                        <li>Reinforced walls for grab bars in bathrooms</li>
+                        <li>Lever-style door handles (easier than knobs)</li>
+                        <li>Adjustable countertops where possible</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="special-situations" class="content-section">
+                <h2>Special Housing Situations</h2>
+                <div class="content-body">
+                    <p>Certain living situations require additional hygiene and housing considerations to maintain health and safety.</p>
+                    
+                    <h3>High-Density Housing</h3>
+                    <p>Apartments, dormitories, and other shared living spaces present unique challenges for hygiene and disease prevention.</p>
+                    
+                    <h4>High-Density Considerations</h4>
+                    <ul>
+                        <li>Enhanced ventilation to compensate for shared air</li>
+                        <li>Strict cleaning protocols for shared surfaces (elevator buttons, laundry rooms)</li>
+                        <li>Noise reduction strategies for mental health</li>
+                        <li>Clear policies for shared kitchen/bathroom use</li>
+                        <li>Pest control coordination among all units</li>
+                        <li>Emergency evacuation plans for all residents</li>
+                    </ul>
+                    
+                    <h3>Temporary Housing</h3>
+                    <p>Shelters, refugee camps, and emergency housing often operate with limited resources but must maintain basic standards.</p>
+                    
+                    <h4>Temporary Housing Guidelines</h4>
+                    <ul>
+                        <li>Minimum 35 sq ft (3.25 sq m) per person in group shelters</li>
+                        <li>Separate sleeping areas for single men, single women, and families</li>
+                        <li>At least one toilet per 20 people, segregated by gender</li>
+                        <li>Handwashing stations near toilets and food areas</li>
+                        <li>Safe cooking facilities or organized food distribution</li>
+                        <li>Protection from weather extremes (insulation, cooling, heating)</li>
+                        <li>Security measures to prevent violence and theft</li>
+                    </ul>
+                    
+                    <h3>Disaster Situations</h3>
+                    <p>After natural disasters or conflicts, maintaining hygiene becomes both more challenging and more critical.</p>
+                    
+                    <h4>Post-Disaster Priorities</h4>
+                    <ol>
+                        <li>Ensure safe water supply (distribution, purification tablets, or boiling instructions)</li>
+                        <li>Establish sanitation facilities (portable toilets, trench latrines)</li>
+                        <li>Distribute hygiene kits (soap, menstrual products, toothpaste)</li>
+                        <li>Provide shelter from elements (tents, tarps, temporary structures)</li>
+                        <li>Organize waste disposal to prevent contamination</li>
+                        <li>Implement disease surveillance for outbreaks</li>
+                    </ol>
+                    
+                    <h3>Informal Settlements</h3>
+                    <p>Slums and informal settlements often lack formal infrastructure but can implement incremental improvements.</p>
+                    
+                    <h4>Upgrading Strategies</h4>
+                    <ul>
+                        <li>Community-led sanitation programs</li>
+                        <li>Shared water points with regular maintenance</li>
+                        <li>Solid waste collection points</li>
+                        <li>Drainage improvements to prevent flooding</li>
+                        <li>Fire breaks and emergency access routes</li>
+                        <li>Secure land tenure to encourage investment in improvements</li>
+                    </ul>
+                    
+                    <h3>Healthcare Facilities</h3>
+                    <p>Housing for patients, elderly, or disabled individuals requires special attention to infection control and accessibility.</p>
+                    
+                    <h4>Healthcare Housing Standards</h4>
+                    <ul>
+                        <li>Single rooms for infectious patients</li>
+                        <li>Hand hygiene stations throughout facilities</li>
+                        <li>Surfaces that can withstand frequent disinfection</li>
+                        <li>Adequate space for equipment and caregivers</li>
+                        <li>Emergency call systems</li>
+                        <li>Design that supports wayfinding for cognitively impaired</li>
+                    </ul>
+                    
+                    <h3>Workplace Housing</h3>
+                    <p>Migrant worker housing, barracks, and other employer-provided housing must meet occupational health standards.</p>
+                    
+                    <h4>Workplace Housing Requirements</h4>
+                    <ul>
+                        <li>Compliance with local labor housing regulations</li>
+                        <li>Protection from occupational hazards (dust, chemicals)</li>
+                        <li>Separation of living and workspaces where appropriate</li>
+                        <li>Privacy protections, especially for live-in domestic workers</li>
+                        <li>Freedom of movement outside work hours</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="disease-prevention" class="content-section">
+                <h2>Hygiene for Disease Prevention</h2>
+                <div class="content-body">
+                    <p>Proper hygiene practices form the first line of defense against infectious diseases in both household and community settings.</p>
+                    
+                    <h3>Respiratory Hygiene</h3>
+                    <p>Respiratory infections spread through droplets and aerosols, requiring specific preventive measures.</p>
+                    
+                    <h4>Respiratory Etiquette</h4>
+                    <ul>
+                        <li>Cough or sneeze into tissue or elbow (not hands)</li>
+                        <li>Immediately dispose of used tissues</li>
+                        <li>Wear masks in crowded or high-risk settings</li>
+                        <li>Maintain distance from visibly ill people</li>
+                        <li>Increase ventilation in shared spaces</li>
+                        <li>Avoid touching face, especially eyes, nose, and mouth</li>
+                    </ul>
+                    
+                    <h3>Foodborne Illness Prevention</h3>
+                    <p>Contaminated food causes millions of illnesses annually. Proper handling prevents most cases.</p>
+                    
+                    <h4>Food Safety Principles</h4>
+                    <ol>
+                        <li><strong>Clean:</strong> Wash hands, surfaces, and produce</li>
+                        <li><strong>Separate:</strong> Keep raw meats apart from other foods</li>
+                        <li><strong>Cook:</strong> Use thermometer to ensure proper temperatures</li>
+                        <li><strong>Chill:</strong> Refrigerate promptly (within 2 hours, 1 hour if >90°F/32°C)</li>
+                    </ol>
+                    
+                    <h4>High-Risk Foods</h4>
+                    <ul>
+                        <li>Raw or undercooked meats, poultry, seafood, and eggs</li>
+                        <li>Unpasteurized dairy products and juices</li>
+                        <li>Raw sprouts</li>
+                        <li>Pre-cut fruits and vegetables (higher contamination risk)</li>
+                    </ul>
+                    
+                    <h3>Waterborne Diseases</h3>
+                    <p>Contaminated water transmits cholera, dysentery, hepatitis A, and other serious illnesses.</p>
+                    
+                    <h4>Water Safety Measures</h4>
+                    <ul>
+                        <li>Use treated or boiled water for drinking, brushing teeth</li>
+                        <li>Store water in clean, covered containers</li>
+                        <li>Clean storage containers regularly with bleach solution</li>
+                        <li>Use safe water sources even for washing fruits/vegetables</li>
+                        <li>In emergencies, use bottled water or boil for 1 minute (3 minutes at high altitudes)</li>
+                    </ul>
+                    
+                    <h3>Vector-Borne Diseases</h3>
+                    <p>Mosquitoes, ticks, and other vectors transmit malaria, dengue, Lyme disease, and more.</p>
+                    
+                    <h4>Vector Control at Home</h4>
+                    <ul>
+                        <li>Eliminate standing water where mosquitoes breed</li>
+                        <li>Use window/door screens in good repair</li>
+                        <li>Apply EPA-approved insect repellents when needed</li>
+                        <li>Wear long sleeves/pants in high-risk areas</li>
+                        <li>Use permethrin-treated bed nets in malaria zones</li>
+                        <li>Keep grass trimmed and remove leaf litter to reduce ticks</li>
+                    </ul>
+                    
+                    <h3>Zoonotic Diseases</h3>
+                    <p>Diseases transmitted between animals and humans require special precautions.</p>
+                    
+                    <h4>Preventing Animal-to-Human Transmission</h4>
+                    <ul>
+                        <li>Wash hands after contact with animals or their waste</li>
+                        <li>Keep pets vaccinated and dewormed</li>
+                        <li>Avoid contact with wild animals</li>
+                        <li>Practice safe food handling with animal products</li>
+                        <li>Use gloves when cleaning cages/litter boxes</li>
+                    </ul>
+                    
+                    <h3>Healthcare-Associated Infections</h3>
+                    <p>Patients and caregivers in home healthcare settings need infection control practices.</p>
+                    
+                    <h4>Home Healthcare Hygiene</h4>
+                    <ul>
+                        <li>Proper hand hygiene before/after care activities</li>
+                        <li>Safe injection practices (never reuse needles)</li>
+                        <li>Proper wound care with clean techniques</li>
+                        <li>Disinfection of medical equipment</li>
+                        <li>Proper handling and laundering of soiled linens</li>
+                        <li>Isolation precautions when appropriate</li>
+                    </ul>
+                    
+                    <h3>Antimicrobial Resistance</h3>
+                    <p>Overuse of antibiotics and improper hygiene contribute to drug-resistant superbugs.</p>
+                    
+                    <h4>Preventing Resistance</h4>
+                    <ul>
+                        <li>Use antibiotics only as prescribed</li>
+                        <li>Complete full courses of antibiotics</li>
+                        <li>Never share or use leftover antibiotics</li>
+                        <li>Prevent infections through vaccination when available</li>
+                        <li>Use regular soap instead of antibacterial products for routine cleaning</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="resources" class="content-section">
+                <h2>Additional Resources</h2>
+                <div class="content-body">
+                    <p>For more information on hygiene and housing standards, consult these authoritative sources:</p>
+                    
+                    <h3>International Organizations</h3>
+                    <ul>
+                        <li>World Health Organization (WHO) Housing and Health Guidelines</li>
+                        <li>UN-Habitat Global Housing Strategy</li>
+                        <li>UNICEF Water, Sanitation and Hygiene (WASH) Programs</li>
+                        <li>International Federation of Red Cross and Red Crescent Societies Shelter Resources</li>
+                    </ul>
+                    
+                    <h3>Government Agencies</h3>
+                    <ul>
+                        <li>CDC Healthy Housing Reference Manual</li>
+                        <li>HUD Housing Quality Standards</li>
+                        <li>EPA Healthy Indoor Environment Protocols</li>
+                        <li>Local public health department housing codes</li>
+                    </ul>
+                    
+                    <h3>Educational Materials</h3>
+                    <ul>
+                        <li>Hygiene promotion toolkits from humanitarian organizations</li>
+                        <li>Community-led total sanitation training manuals</li>
+                        <li>Home maintenance and cleaning guides from extension services</li>
+                        <li>Disaster preparedness guides with shelter information</li>
+                    </ul>
+                    
+                    <h3>Technology Solutions</h3>
+                    <ul>
+                        <li>Water purification technologies for household use</li>
+                        <li>Low-cost sanitation systems for informal settlements</li>
+                        <li>Ventilation improvement devices</li>
+                        <li>Hygiene monitoring apps and reminder systems</li>
+                    </ul>
+                    
+                    <h3>Advocacy Organizations</h3>
+                    <ul>
+                        <li>Habitat for Humanity housing programs</li>
+                        <li>WaterAid sanitation initiatives</li>
+                        <li>Global Shelter Cluster for disaster response</li>
+                        <li>Local tenant rights organizations</li>
+                    </ul>
+                    
+                    <h3>Research Institutions</h3>
+                    <ul>
+                        <li>Housing and health research from schools of public health</li>
+                        <li>Innovative housing solutions from architectural programs</li>
+                        <li>Behavioral science studies on hygiene adoption</li>
+                        <li>Economic analyses of housing interventions</li>
+                    </ul>
+                    
+                    <p>This comprehensive guide provides foundational knowledge about hygiene and housing standards, but specific applications may require consultation with local health authorities, housing experts, or community leaders to account for regional variations in climate, culture, and resources.</p>
+                    
+                    <h3>Continuing Education</h3>
+                    <p>Stay informed about evolving standards and emerging research through:</p>
+                    <ul>
+                        <li>Professional conferences on public health and housing</li>
+                        <li>Peer-reviewed journals in environmental health</li>
+                        <li>Government policy updates on building codes</li>
+                        <li>Community workshops on healthy homes</li>
+                    </ul>
+                    
+                    <p>Remember that improving hygiene and housing conditions is an ongoing process that benefits from community engagement, incremental improvements, and adaptation to changing circumstances and scientific understanding.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>© 2023 Comprehensive Hygiene & Housing Guide. All rights reserved.</p>
+        <p>This information is provided for educational purposes and should not replace professional advice.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+      <a href="animal-health.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Animal Health</a>
+    </div>
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

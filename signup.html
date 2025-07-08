@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AERO DAIRY • Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      /* Greens & teals */
+      --green-light:#c8ff7c;
+      --green-medium:#56ab2f;
+      --teal:#00c9b7;
+      /* Violets */
+      --violet-light:#c44fff;
+      --violet-dark:#732bff;
+      /* Misc */
+      --green-dark:#1d4e0b;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Poppins',sans-serif;
+      /* new backdrop gradient: bright green ► teal */
+      background:linear-gradient(135deg,var(--green-light),var(--teal));
+      color:var(--white);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* CARD ─────────────────────────────────── */
+    .card{
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(9px);
+      border-radius:16px;
+      padding:2.5rem 3rem;
+      width:min(90%,480px);
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+
+      /* slide‑in from left */
+      animation:slide-in 1s cubic-bezier(.25,.8,.25,1) forwards;
+      opacity:0;
+      transform:translateX(-85vw);
+    }
+    @keyframes slide-in{
+      to{opacity:1;transform:translateX(0);}
+    }
+
+    /* LOGO + HEADING ANIMATIONS ────────────── */
+    h1,h2{text-align:center;letter-spacing:2px;margin:0 0 1rem;}
+    h1{
+      font-size:2.2rem;font-weight:600;
+      /* rainbow‑through‑green‑teal‑violet gradient */
+      background:linear-gradient(
+        270deg,
+        var(--green-light),
+        var(--green-medium),
+        var(--teal),
+        var(--violet-light),
+        var(--violet-dark),
+        var(--green-light)
+      );
+      background-size:1000% 100%;
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+
+      animation:gradient-shift 9s linear infinite,
+                letter-pulse 3.2s ease-in-out infinite;
+    }
+    @keyframes gradient-shift{
+      0%{background-position:0% 0;}
+      100%{background-position:100% 0;}
+    }
+    @keyframes letter-pulse{
+      0%,100%{letter-spacing:2px;}
+      50%{letter-spacing:7px;}
+    }
+
+    h2{
+      font-size:1.5rem;font-weight:400;position:relative;overflow:hidden;
+    }
+    h2::after{
+      content:'';position:absolute;left:0;bottom:0;width:100%;height:3px;
+      /* same bright palette for underline */
+      background:linear-gradient(90deg,var(--green-light),var(--violet-light));
+      animation:slide-line 2.2s infinite;
+    }
+    @keyframes slide-line{
+      0%{transform:translateX(-100%);}
+      50%{transform:translateX(0);}
+      100%{transform:translateX(100%);}
+    }
+
+    /* FORM ─────────────────────────────────── */
+    form{display:flex;flex-direction:column;gap:1rem;}
+    label{font-size:.9rem;}
+    input[type="text"],input[type="email"],input[type="password"]{
+      padding:.6rem .9rem;border:none;border-radius:8px;font-size:.9rem;outline:none;
+      transition:box-shadow .3s;
+    }
+    input:focus{box-shadow:0 0 0 3px rgba(255,255,255,.35);}
+
+    .gender-group{display:flex;gap:1.5rem;align-items:center;}
+    .gender-group input{margin-right:.3rem;}
+
+    button{
+      background:linear-gradient(135deg,var(--green-medium),var(--violet-dark));
+      color:var(--white);border:none;
+      padding:.8rem;border-radius:8px;font-size:1rem;cursor:pointer;
+      transition:transform .25s,box-shadow .25s;
+    }
+    button:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.35);}
+
+    .login-link{margin-top:1rem;text-align:center;font-size:.9rem;}
+    .login-link a{
+      color:var(--white);font-weight:600;text-decoration:none;position:relative;
+    }
+    .login-link a::after{
+      content:'';position:absolute;left:0;bottom:-2px;width:100%;height:2px;
+      background:var(--white);transform:scaleX(0);transition:transform .3s;transform-origin:left;
+    }
+    .login-link a:hover::after{transform:scaleX(1);}
+
+    /* FOOTER ───────────────────────────────── */
+    .site-footer{
+      width:100%;margin-top:auto;
+      background:linear-gradient(135deg,var(--violet-dark),var(--green-dark));
+      padding:1rem 2rem;text-align:center;font-size:.85rem;
+    }
+
+    /* Accessibility */
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIGN‑UP CARD -->
+  <section class="card">
+    <h1>AERO DAIRY</h1>
+    <h2>SIGN UP</h2>
+
+    <form action="signup.php" method="post" autocomplete="off">
+      <label for="FirstName">First Name</label>
+      <input type="text" id="FirstName" name="FirstName" required>
+
+      <label for="LastName">Last Name</label>
+      <input type="text" id="LastName" name="LastName" required>
+
+      <label for="RegistrationNo">Registration No</label>
+      <input type="text" id="RegistrationNo" name="RegistrationNo" required>
+
+      <label for="Email">Email</label>
+      <input type="email" id="Email" name="Email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirm_password">Confirm Password</label>
+      <input type="password" id="confirm_password" name="confirm_password" required>
+
+      <div class="gender-group">
+        <label>Gender</label>
+        <label for="male"><input type="radio" id="male" name="Gender" value="Male" required> Male</label>
+        <label for="female"><input type="radio" id="female" name="Gender" value="Female" required> Female</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+	<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+    <div class="login-link">
+      Already have an account? <a href="login.php">Login Here</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    © 2025 AERO DAIRY | All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Target Audience – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --green: #1a6c2e;
+      --purple: #6a0dad;
+      --light: #f4fdf5;
+      --dark: #111;
+      --white: #fff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Segoe UI',sans-serif;
+      background:var(--light);
+      color:var(--dark);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    header {
+      background:var(--green);
+      padding:1rem;
+      text-align:center;
+      color:var(--white);
+    }
+    header h1 { font-size:2rem; }
+    nav {
+      background:var(--purple);
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      padding:0.6rem;
+    }
+    nav a {
+      color:var(--white);
+      text-decoration:none;
+      font-weight:bold;
+      font-size:0.9rem;
+    }
+    nav a:hover { text-decoration:underline; }
+    main {
+      flex:1;
+      padding:2rem;
+      max-width:1000px;
+      margin:auto;
+    }
+    .audience-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .centered {
+      grid-column: span 2;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      background:var(--white);
+      box-shadow:0 0 8px rgba(0,0,0,0.1);
+      border-left:5px solid var(--purple);
+      border-radius:6px;
+      overflow:hidden;
+      max-width: 420px;
+      text-align: left;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s;
+    }
+    .card:hover { transform:scale(1.03); }
+    .card img {
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .card-content {
+      padding:1rem;
+    }
+    .card-content h2 {
+      color:var(--green);
+      font-size:1.3rem;
+      margin-bottom:0.5rem;
+    }
+    .card-content p {
+      font-size:0.95rem;
+      line-height:1.5;
+    }
+    .back-btn {
+      display:inline-block;
+      background:var(--purple);
+      color:var(--white);
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      margin-top:2rem;
+    }
+    .back-btn:hover { background:#501065; }
+    footer {
+      background:var(--purple);
+      color:var(--white);
+      padding:1rem;
+      font-size:0.8rem;
+    }
+    .footer-grid {
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+    .footer-col {
+      flex:1;
+      min-width:150px;
+    }
+    .footer-col h4 {
+      color:#90ee90;
+      margin-bottom:0.6rem;
+    }
+    .footer-col ul { list-style:none; padding:0; }
+    .footer-col li { margin-bottom:6px; }
+    .footer-col a { color:var(--white); text-decoration:none; }
+    .footer-col a:hover { text-decoration:underline; }
+    .copy {
+      text-align:center;
+      margin-top:1rem;
+      font-size:0.75rem;
+      color:#ccc;
+    }
+
+    @media (max-width: 768px) {
+      .audience-container {
+        grid-template-columns: 1fr;
+      }
+      .centered {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-users"></i> Target Audience</h1>
+    <p>Explore the key groups we serve</p>
+  </header>
+
+  <nav>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="others.html">Other Initiatives</a>
+    <a href="resources.html">Resources</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <div class="audience-container">
+      <!-- Farmers -->
+      <a href="farmers.html" class="card">
+        <img src="cowf.jpeg" alt="Farmers">
+        <div class="card-content">
+          <h2>Farmers</h2>
+          <p>
+            • Small to mid-scale dairy producers<br>
+            • Seeking quality improvement<br>
+            • Interested in yield innovation<br>
+            • Need training & support<br>
+            • Want better market access
+          </p>
+        </div>
+      </a>
+
+      <!-- Community -->
+      <a href="community.html" class="card">
+        <img src="	gathering.jpeg" alt="Community">
+        <div class="card-content">
+          <h2>Community</h2>
+          <p>
+            • Cooperatives and social groups<br>
+            • Shared equipment models<br>
+            • Focus on training & wellness<br>
+            • Collaborate on milk safety<br>
+            • Drive village-level change
+          </p>
+        </div>
+      </a>
+
+      <!-- Institutions -->
+      <div class="centered">
+        <a href="institutions.html" class="card">
+          <img src="lets.jpeg" alt="Institutions">
+          <div class="card-content">
+            <h2>Institutions</h2>
+            <p>
+              • Agri colleges & research centers<br>
+              • Teaching dairy best practices<br>
+              • Partnering on innovations<br>
+              • Creating job pipelines<br>
+              • Promoting sustainability
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <a href="dashboard.php" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="dashboard.php">Home</a></li>
+          <li><a href="report.html">Report</a></li>
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="permits.html">Permits</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="others.html">Other Initiatives</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Socials A</h4>
+        <ul>
+          <li>Facebook – <strong>@aerodairykenya</strong></li>
+          <li>Twitter – <strong>@aerodairyke</strong></li>
+          <li>Instagram – <strong>@aerodairy_official</strong></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Socials B</h4>
+        <ul>
+          <li>YouTube – <strong>AERO DAIRY</strong></li>
+          <li>WhatsApp – <strong>+254 719 594 705</strong></li>
+          <li>TikTok – <strong>@aerodairy_ke</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2025 AERO DAIRY. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

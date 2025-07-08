@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Goals – AERO DAIRY</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green: #02a302;
+      --green-dark: #014d00;
+      --purple: #5e2b97;
+      --purple-dark: #3b1d60;
+      --text-light: #e0ffe0;
+      --panel-bg: rgba(20, 10, 30, 0.9);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-light);
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--green-dark) 100%);
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--purple-dark), var(--green-dark));
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #d0ffd0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    nav a {
+      color: #c6ffd9;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+
+    nav a:hover {
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+    }
+
+    .back-btn-container {
+      max-width: 1100px;
+      margin: 20px auto 0 auto;
+      text-align: center;
+    }
+
+    .back-btn {
+      background-color: var(--green);
+      color: var(--purple-dark);
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 128, 0, 0.7);
+    }
+
+    .back-btn:hover {
+      background-color: var(--green-dark);
+      color: #c6fdd3;
+      box-shadow: 0 2px 10px var(--green-dark);
+    }
+
+    marquee {
+      background-color: var(--green-dark);
+      padding: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #d6ffe4;
+      box-shadow: inset 0 0 5px #0b3900;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 30px auto 60px auto;
+      padding: 30px 20px;
+      background-color: var(--panel-bg);
+      border-radius: 14px;
+      animation: fadeIn 1.4s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: var(--green);
+      text-shadow: 0 0 6px var(--green);
+    }
+
+    section p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: #c6fdd3;
+      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: var(--purple-dark);
+      border-radius: 10px;
+      padding: 16px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: var(--green-dark);
+      box-shadow: 0 8px 30px var(--green);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      pointer-events: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .card h3 {
+      color: #b6ffdb;
+      margin: 10px 0 6px;
+      font-size: 18px;
+      text-shadow: 0 0 5px #b6ffdb;
+    }
+
+    .card p {
+      color: #e3ffe5;
+      font-size: 14px;
+      flex-grow: 1;
+      text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      background: linear-gradient(to right, var(--purple), var(--green));
+      color: #fff;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 4px solid #02a302;
+      box-shadow: inset 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #f0ffe3;
+      text-shadow: 0 0 6px #c1ffc1;
+    }
+
+    .footer-col p, .footer-col a {
+      font-size: 14px;
+      color: #d8ffe8;
+      text-decoration: none;
+      text-shadow: 0 0 3px rgba(0,0,0,0.4);
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+      color: #c1ffcb;
+      text-shadow: 0 0 6px var(--green);
+    }
+
+    .social-icons i {
+      margin-right: 8px;
+      font-size: 18px;
+      color: #eafff0;
+      transition: transform 0.3s, color 0.3s;
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+
+    .social-icons i:hover {
+      transform: scale(1.2);
+      color: #fff;
+      text-shadow: 0 0 8px var(--green);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 10px;
+      background-color: #0f001f;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><i class="fa-solid fa-cow"></i> AERO DAIRY</div>
+    <nav>
+      <a href="dashboard.php">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="targetaudience.html">Target Audience</a>
+      <a href="goals.html">Goals</a>
+    </nav>
+  </header>
+
+  <!-- BACK TO DASHBOARD BUTTON -->
+<div class="back-btn-container">
+  <a href="dashboard.php" class="back-btn" aria-label="Back to Dashboard" onclick="return handleBackClick(event)">
+    <i class="fa fa-arrow-left"></i> Back to Dashboard
+  </a>
+</div>
+
+<script>
+// ✅ Engagement logging function
+function logEngagement(user, page, action) {
+  fetch('log_engagement.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `user_name=${encodeURIComponent(user)}&page=${encodeURIComponent(page)}&action=${encodeURIComponent(action)}`
+  });
+}
+
+// ✅ OnClick handler with confirmation + logging
+function handleBackClick(e) {
+  e.preventDefault(); // Prevent default navigation first
+
+  if (confirm("Are you sure you want to return to the dashboard?")) {
+    const user = '<?= $_SESSION["FirstName"] ?? "guest" ?>';
+    const currentPage = window.location.pathname;
+    const action = "Back to Dashboard Click";
+
+    // Log to database
+    logEngagement(user, currentPage, action);
+
+    // Redirect after log
+    setTimeout(() => {
+      window.location.href = "dashboard.php";
+    }, 500); // short delay to allow logging
+  }
+  return false; // Prevent default until confirm
+}
+</script>
+
+
+  <!-- MARQUEE -->
+  <marquee behavior="scroll" direction="left">
+    Increasing Milk Production • Enhancing Milk Quality • Expanding Market Access • Strengthening Regulatory Compliance
+  </marquee>
+
+  <!-- MAIN SECTION -->
+  <section>
+    <h2>Our Goals</h2>
+    <p>
+      At AERO DAIRY, we are dedicated to empowering dairy farmers by focusing on key goals that drive sustainable growth, improved quality, and regulatory excellence.
+    </p>
+
+    <div class="cards-container">
+  <a href="increasedmilk.html" class="card" tabindex="0" aria-label="Increased Milk Production">
+    <img src="cowimage.jpeg" alt="Dairy cow grazing in pasture" />
+    <h3>Increased Milk Production</h3>
+    <p>Enhancing milk yield through improved nutrition, breeding, and farm management practices.</p>
+  </a>
+
+  <a href="milkquality.html" class="card" tabindex="0" aria-label="Improve Milk Quality">
+    <img src="freshmilk.jpeg" alt="Fresh milk in glass bottles" />
+    <h3>Improve Milk Quality</h3>
+    <p>Ensuring superior milk safety and quality via best practices in handling, storage, and contamination control.</p>
+  </a>
+
+  <a href="marketaccess.html" class="card" tabindex="0" aria-label="Improve Market Access and Competitiveness">
+    <img src="market.jpeg" alt="Milk products displayed at market" />
+    <h3>Improve Market Access & Competitiveness</h3>
+    <p>Expanding access to fair markets and strengthening the competitive position of dairy farmers.</p>
+  </a>
+
+  <a href="improveregulatory.html" class="card" tabindex="0" aria-label="Improve Regulatory Compliance">
+    <img src="compliance.jpeg" alt="Regulatory compliance document" />
+    <h3>Improve Regulatory Compliance</h3>
+    <p>Supporting adherence to industry standards and regulations for sustainable dairy farming.</p>
+  </a>
+</div/.>
+
+  </section>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Important Links</h4>
+        <a href="faqs.html">FAQs</a><br />
+        <a href="privacy.html">Privacy Policy</a><br />
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

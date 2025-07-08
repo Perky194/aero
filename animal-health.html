@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animal Health – AERO DAIRY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --green-dark: #014d00;
+      --green-light: #02a302;
+      --orange: #ff6f00;
+      --purple: #6a1b9a;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('perky.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease-in-out;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--green-dark);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--purple);
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px var(--shadow);
+      animation: fadeInUp 1s ease-in-out;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .focus-card {
+      background: var(--green-dark);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+
+    .focus-card:hover {
+      background: var(--green-light);
+      transform: translateY(-3px);
+    }
+
+    .focus-card i {
+      margin-right: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 20px;
+      background-color: var(--purple);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <header>
+      <h1><i class="fas fa-notes-medical"></i> Animal Health</h1>
+      <p>Care. Cure. Commitment.</p>
+    </header>
+
+    <div class="content">
+      <h2>Our Focus Areas</h2>
+      <div class="focus-grid">
+<<a href="veterinary.html" class="focus-card">
+  <i class="fas fa-stethoscope"></i> 1. Veterinary Practices
+</a>
+        <a href="vaccination.html" class="focus-card">
+          <i class="fas fa-syringe"></i> 2. Vaccination & Disease Control
+        </a>
+        <a href="hygiene.html" class="focus-card">
+          <i class="fas fa-broom"></i> 3. Hygiene & Housing
+        </a>
+        <a href="nutrition.html" class="focus-card">
+          <i class="fas fa-apple-alt"></i> 4. Nutrition & Supplements
+        </a>
+      </div>
+
+      <a href="programs.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Programs</a>
+    </div>
+  </main>
+
+ <!-- FOOTER (unchanged) -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col contact"><h4>Contact Us</h4><p>Phone: +254 700 123 456</p><p>Email: <a href="mailto:info@aerodairy.com">info@aerodairy.com</a></p></div>
+    <div class="footer-col links"><h4>Quick Links</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="faqs.html">FAQs</a></li></ul></div>
+    <div class="footer-col address"><h4>Postal Address</h4><p>P.O. Box 123‑00100</p><p>Nyandarua, Kenya</p>
+      <div class="social-icons"><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-linkedin-in"></i><i class="fa-brands fa-youtube"></i></div>
+    </div>
+  </div>
+ <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

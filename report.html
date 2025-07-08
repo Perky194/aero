@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AERO DAIRY Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f3fef5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #2e7d32, #6a1b9a);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .tabs {
+      text-align: center;
+      margin: 20px;
+    }
+    .tabs button {
+      background: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tabs button:hover {
+      background: #2e7d32;
+    }
+    .report-section {
+      display: none;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .report-section.active {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #6a1b9a;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .back-button:hover {
+      background: #4caf50;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AERO DAIRY – Admin Reports</h1>
+  </header>
+
+  <div class="tabs">
+    <button onclick="showReport('admissions')">Admissions Report</button>
+    <button onclick="showReport('submissions')">Form Submissions</button>
+  </div>
+
+  <!-- Report Sections -->
+  <div id="admissions" class="report-section active">
+    <h2>Admissions Report</h2>
+    <table id="admissionsTable">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Total Applicants</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="submissions" class="report-section">
+    <h2>Form Submissions</h2>
+    <table id="submissionsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Submission Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div style="text-align:center; padding: 20px;">
+    <a href="dashboard.php" class="back-button">Back to Dashboard</a>
+  </div>
+
+  <script>
+    // Fetch data from PHP
+    fetch('report.php')
+      .then(res => res.json())
+      .then(data => {
+        // Populate Admissions Table
+        const admissionsBody = document.querySelector('#admissionsTable tbody');
+        if (data.admissions.length > 0) {
+          data.admissions.forEach(row => {
+            admissionsBody.innerHTML += `<tr>
+              <td>${row.program}</td>
+              <td>${row.total}</td>
+            </tr>`;
+          });
+        } else {
+          admissionsBody.innerHTML = '<tr><td colspan="2">No admissions found.</td></tr>';
+        }
+
+        // Populate Submissions Table
+        const submissionsBody = document.querySelector('#submissionsTable tbody');
+        if (data.submissions.length > 0) {
+          data.submissions.forEach(row => {
+            submissionsBody.innerHTML += `<tr>
+              <td>${row.id}</td>
+              <td>${row.name}</td>
+              <td>${row.email}</td>
+              <td>${row.message}</td>
+              <td>${row.submission_date}</td>
+            </tr>`;
+          });
+        } else {
+          submissionsBody.innerHTML = '<tr><td colspan="5">No submissions found.</td></tr>';
+        }
+      });
+
+    // Tab switch
+    function showReport(id) {
+      const sections = document.querySelectorAll('.report-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Core Requirements – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f9f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+    header {
+      background: #008c45;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2em; }
+    nav { margin-top: 10px; }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .dropdown-container { max-width: 400px; margin: 30px auto; }
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 2px solid #ffa500;
+      background: #fffaf0;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      padding: 10px 18px;
+      font-size: .8rem;
+      background: #800080;
+      color: #fff;
+      border-radius: 3px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .back-btn:hover { background: #5a005a; }
+
+    /* FOOTER */
+    footer {
+      background: #4B0082;
+      color: #ddd;
+      padding: 10px 0 5px;
+      font-size: .75rem;
+      margin-top: auto;
+    }
+    .footer-container {
+      width: 75%;
+      margin: 0 auto;
+    }
+    .footer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+    .footer-header h4 {
+      color: #90ee90;
+      font-size: .9rem;
+      margin: 0;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #90ee90;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-content .col {
+      flex: 1;
+      min-width: 150px;
+    }
+    .footer-content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-content li {
+      margin: 4px 0;
+    }
+    .footer-content a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: .75rem;
+    }
+    .footer-content a:hover { text-decoration: underline; }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 4px 10px;
+    }
+    .copyright {
+      text-align: center;
+      color: #ccc;
+      font-size: .65rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-header, .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-content .col {
+        width: 100%;
+        text-align: center;
+      }
+      .social-grid {
+        grid-template-columns: repeat(2, auto);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1><i class="fas fa-clipboard-list"></i> Core Requirements</h1>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="dropdown-container">
+      <label for="coreReq">Select a requirement to view detailed information:</label>
+      <br><br>
+      <select id="coreReq" onchange="if(this.value) window.location.href=this.value">
+        <option value="">-- Choose Requirement --</option>
+        <option value="budget-financial.html">Budget &amp; Financial Projections</option>
+        <option value="milk-preservation.html">Milk Preservation Requirements</option>
+      </select>
+    </div>
+  </main>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+
+  <!-- BACK BUTTON -->
+  <a class="back-btn" href="dashboard.php">
+    <i class="fas fa-arrow-left"></i> Back to Dashboard
+  </a>
+
+  <!-- FOOTER -->
+ <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

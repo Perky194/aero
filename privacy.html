@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – AERO DAIRY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --green-dark: #014d00;
+      --green-light: #02a302;
+      --blur-bg: rgba(0, 0, 0, 0.55);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: url('	image.jpeg') center/cover fixed no-repeat;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: var(--blur-bg);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .navbar a:hover {
+      opacity: 0.7;
+    }
+    .policy-card {
+      max-width: 800px;
+      margin: 110px auto 40px;
+      background: rgba(0, 0, 0, 0.78);
+      padding: 30px 36px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .policy-card h1 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      text-align: center;
+      color: var(--green-light);
+    }
+    .policy-section {
+      margin-bottom: 24px;
+    }
+    .policy-section h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #80ffd0;
+    }
+    .policy-section p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .checkbox-area {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .checkbox-area input {
+      transform: scale(1.2);
+      accent-color: var(--green-light);
+      margin-top: 4px;
+    }
+    .agree-btn {
+      margin-top: 24px;
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 6px;
+      background: var(--green-light);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: not-allowed;
+      opacity: 0.5;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .agree-btn.enabled {
+      cursor: pointer;
+      opacity: 1;
+    }
+    .agree-btn.enabled:hover {
+      transform: scale(1.03);
+    }
+    @media(max-width: 480px) {
+      .policy-card {
+        margin: 90px 12px;
+        padding: 24px;
+      }
+      .policy-card h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="dashboard.php">&larr; Back to Dashboard</a>
+    <span>Privacy Policy</span>
+  </div>
+
+  <!-- Main Policy Content -->
+  <section class="policy-card">
+    <h1>AERO DAIRY Privacy Policy</h1>
+
+    <div class="policy-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect personal data that you voluntarily provide when interacting with AERO DAIRY platforms—such as your name, email, phone number, area of study, and admission-related information. We may also collect usage data such as pages visited and device type.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. How We Use Your Data</h2>
+      <p>Your data is used for managing your application, communication, improving service quality, and responding to inquiries. We may also use aggregated data for research or reporting, without identifying individuals.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. Cookies & Analytics</h2>
+      <p>We use cookies to enhance your user experience and to track website usage through analytics tools. You may disable cookies via your browser, although some features may become limited.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Data Protection & Sharing</h2>
+      <p>We protect your data through secure systems and encryption. Your information will never be sold or shared without your permission, unless required by law or for critical service delivery purposes (e.g., payment processors).</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Your Rights</h2>
+      <p>You may request to access, correct, or delete your data at any time. To do so, contact us at <a href="mailto:info@aerodairy.com" style="color:#80ffd0;">info@aerodairy.com</a>. You may also opt out of communications at any time.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Changes to this Policy</h2>
+      <p>We may update this policy to reflect changes in legal or operational requirements. Continued use of our services implies acceptance of the updated policy.</p>
+    </div>
+
+    <!-- Agreement -->
+    <div class="checkbox-area">
+      <input type="checkbox" id="consentBox">
+      <label for="consentBox">I have read and understood AERO DAIRY’s Privacy Policy, and I agree to its terms.</label>
+    </div>
+
+    <button id="agreeBtn" class="agree-btn" disabled>I Agree &amp; Continue</button>
+  </section>
+
+  <script>
+    const checkbox = document.getElementById('consentBox');
+    const btn = document.getElementById('agreeBtn');
+
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        btn.disabled = false;
+        btn.classList.add('enabled');
+      } else {
+        btn.disabled = true;
+        btn.classList.remove('enabled');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      if (!btn.disabled) {
+        alert('Thank you for accepting our privacy policy!');
+        window.location.href = 'dashboard.php'; // Redirect after agreement
+      }
+    });
+  </script>
+  <!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Low Milk Production – AERO DAIRY</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    :root {
+      --green: #02a302;
+      --light-green: #8EFE8E;
+      --dark-green: #0b590b;
+      --purple: #7e3ea1;
+      --light-purple: #b293d3;
+      --dark-purple: #4b1e63;
+      --panel-bg: rgba(18, 18, 18, 0.85);
+      --text-light: #c9e4de;
+      --highlight-green: #1ad43a; /* brighter green, no blur */
+      --highlight-purple: #b875d8; /* brighter purple, no blur */
+      --red: #e02b2b;
+      --back-btn-bg: #4b1e63;
+      --back-btn-hover-bg: #7e3ea1;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--light-green), var(--light-purple));
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--green), var(--purple));
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+      user-select: none;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--light-green);
+      text-shadow: 1px 1px 3px var(--dark-green);
+      margin: 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 24px auto 40px auto;
+      padding: 12px 28px;
+      background-color: var(--back-btn-bg);
+      color: var(--light-green);
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      box-shadow: 0 0 12px var(--back-btn-bg);
+      display: flex;
+      align-items: center;
+      max-width: 180px;
+      justify-content: center;
+      margin-left: 24px;
+    }
+
+    .back-btn i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .back-btn:hover,
+    .back-btn:focus {
+      background-color: var(--back-btn-hover-bg);
+      color: var(--light-purple);
+      box-shadow: 0 0 15px var(--back-btn-hover-bg);
+      outline: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      background: var(--panel-bg);
+      padding: 40px 40px 50px 40px;
+      border-radius: 14px;
+      animation: fadeIn 1.3s ease forwards;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.55);
+      user-select: text;
+    }
+
+    h2 {
+      border-left: 6px solid var(--green);
+      padding-left: 14px;
+      margin-bottom: 20px;
+      color: var(--highlight-green);
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 2px var(--dark-green);
+    }
+
+    h3 {
+      color: var(--highlight-purple);
+      font-weight: 700;
+      margin-bottom: 10px;
+      margin-top: 22px;
+      font-size: 1.3rem;
+      text-shadow: 0 0 3px var(--dark-purple);
+    }
+
+    p {
+      margin-bottom: 22px;
+      font-size: 1.1rem;
+      color: var(--highlight-green);
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 12px 0 30px 28px;
+      font-size: 1.1rem;
+      color: var(--highlight-purple);
+      line-height: 1.6;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    .highlight-green {
+      color: var(--highlight-green);
+      font-weight: 700;
+      /* removed blur */
+      text-shadow: none;
+    }
+
+    .highlight-purple {
+      color: var(--highlight-purple);
+      font-weight: 700;
+      /* removed blur */
+      text-shadow: none;
+    }
+
+    .read-more-toggle {
+      background-color: var(--green);
+      color: var(--light-purple);
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 10px 22px;
+      cursor: pointer;
+      margin: 15px 0 35px 0;
+      display: block;
+      width: fit-content;
+      box-shadow: 0 0 12px var(--green);
+      transition: background-color 0.3s ease;
+    }
+
+    .read-more-toggle:hover,
+    .read-more-toggle:focus {
+      background-color: var(--purple);
+      color: var(--light-green);
+      box-shadow: 0 0 15px var(--purple);
+      outline: none;
+    }
+
+    .read-more-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease, padding 0.5s ease;
+      padding-left: 0;
+      margin-bottom: 0;
+      color: var(--highlight-purple);
+      user-select: text;
+      font-size: 1.1rem;
+      line-height: 1.65;
+    }
+
+    .read-more-content.open {
+      max-height: 2200px; /* enough for ~1.5 pages */
+      padding-left: 14px;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Low Milk Production</h1>
+  </header>
+
+  <a href="problemsolved.html" class="back-btn" aria-label="Back to problem solved">
+    <i class="fa fa-arrow-left"></i> Back to problem solved
+  </a>
+
+  <main class="container" role="main" aria-labelledby="problem-title">
+    <section aria-labelledby="problem-title">
+      <h2 id="problem-title">📌 What is the Problem?</h2>
+      <p>
+        Insufficient milk output per cow or calf unit — measured against breed potential — reduces income and undermines dairy viability.
+      </p>
+      <p>
+        <strong>Low milk production</strong> is a critical challenge for dairy farmers, especially in Nyandarua County, where many depend on dairy for livelihood. When cows produce less milk than expected, it impacts not only farmer incomes but also local nutrition and dairy industry sustainability.
+      </p>
+      <p>
+        This problem manifests as a reduction in daily milk volume and quality, making it harder for farmers to meet market demand or provide adequate nutrition to their families. Without intervention, poor production can cause farmers to abandon dairy farming altogether.
+      </p>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-1" onclick="toggleReadMore(1)">
+        Read More
+      </button>
+      <div id="readmore-1" class="read-more-content" aria-hidden="true">
+        <p>
+          Dairy productivity is influenced by multiple factors including genetics, nutrition, health, and management. For instance, even a high-yielding breed can underperform if feed quality is poor or the cow suffers from disease or stress.
+        </p>
+        <p>
+          In Nyandarua County, challenges such as fluctuating feed availability, disease outbreaks, and climatic stress exacerbate this problem. The overall effect is a vicious cycle of low income and limited resources to improve farm conditions.
+        </p>
+        <p>
+          Understanding this problem fully is the first step toward sustainable solutions that improve milk yield, farmer income, and dairy sector resilience.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="causes-title">
+      <h2 id="causes-title">🔍 Causes of Low Milk Production</h2>
+      <ul>
+        <li><span class="highlight-green">Poor nutrition and fodder quality</span> — inadequate or low-quality feed reduces milk output drastically.</li>
+        <li><span class="highlight-purple">Diseases and parasites</span> — infections weaken cows, affecting milk yield and quality.</li>
+        <li><span class="highlight-green">Improper breeding and genetics</span> — using low-yield breeds or inbreeding limits production potential.</li>
+        <li><span class="highlight-purple">Poor farm management practices</span> — lack of proper housing, hygiene, and milking routines harm productivity.</li>
+        <li><span class="highlight-green">Environmental and climatic stress</span> — heat, cold, and drought stress reduce feed intake and milk production.</li>
+      </ul>
+      <button class="read-more-toggle" aria-expanded="false" aria-controls="readmore-2" onclick="toggleReadMore(2)">
+        Read More
+      </button>
+      <div id="readmore-2" class="read-more-content" aria-hidden="true">
+        <p>
+          <span class="highlight-green">Nutrition</span> is the most critical factor. When cows lack sufficient energy, protein, minerals, and vitamins, their milk production drops. Farmers often struggle to provide quality fodder throughout the year due to seasonal variability.
+        </p>
+        <p>
+          <span class="highlight-purple">Diseases</span> such as mastitis, foot rot, and internal parasites sap cow health. Without regular veterinary care, infections reduce both quantity and quality of milk.
+        </p>
+        <p>
+          Genetics play a role: high-producing breeds like Friesians or Jerseys require better management and feed but can provide higher returns. Many farmers keep indigenous or cross breeds that produce less milk naturally.
+        </p>
+        <p>
+          Management involves proper shelter, clean milking techniques, and regular monitoring. Poor management increases stress and infections.
+        </p>
+        <p>
+          Environmental stresses like high temperatures cause cows to eat less and lower milk yield. Providing shade and water is crucial to mitigate heat stress.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="solution-title">
+      <h2 id="solution-title">🌱 AERO DAIRY's Solution</h2>
+      <p>
+        <span class="highlight-green">AERO DAIRY</span> offers a comprehensive, step-by-step approach to tackle low milk production by focusing on high-quality fodder production, proper feeding strategies, and improved farm practices.
+      </p>
+
+      <h3>Step-by-Step Procedure for Fodder Production and Feeding</h3>
+
+      <ol>
+        <li>
+          <strong>Site Preparation</strong>: Clear the land of weeds, stones, and debris. Ensure good drainage and soil testing to identify nutrient needs.
+        </li>
+        <li>
+          <strong>Seed Selection</strong>: Use high-yield, nutritious fodder species suitable for local conditions such as Napier grass, Rhodes grass, and legumes like Desmodium or Lucerne.
+        </li>
+        <li>
+          <strong>Planting</strong>: Sow seeds during the start of the rainy season for best germination. Follow recommended spacing to allow healthy growth and maximize yield.
+        </li>
+        <li>
+          <strong>Fertilization</strong>: Apply organic manure and, if needed, balanced fertilizers based on soil test results to boost growth.
+        </li>
+        <li>
+          <strong>Irrigation</strong>: Provide water especially during dry spells to ensure consistent fodder growth.
+        </li>
+        <li>
+          <strong>Weeding and Pest Control</strong>: Regularly remove weeds and monitor for pests. Use environmentally friendly pest management to protect fodder quality.
+        </li>
+        <li>
+          <strong>Harvesting</strong>: Harvest fodder at optimal growth stages (usually when plants are 60–90 cm tall) to ensure high nutritive value. Avoid over-maturity, which reduces quality.
+        </li>
+        <li>
+          <strong>Storage</strong>: Store fodder in well-ventilated, dry areas to prevent mold and nutrient loss. Consider silage or haymaking for long-term storage.
+        </li>
+        <li>
+          <strong>Feeding Practices</strong>:
+          <ul>
+            <li>Feed fresh or stored fodder daily, balancing roughage with concentrate feeds for better milk yield.</li>
+            <li>During <span class="highlight-purple">pregnancy and early lactation</span>, provide extra energy and protein-rich feeds to support cow health and milk production.</li>
+            <li>In <span class="highlight-purple">winter or dry seasons</span>, supplement fodder with conserved feeds and mineral blocks to maintain production.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Monitoring and Adjusting</strong>: Regularly assess fodder availability and milk production. Adjust planting schedules and feeding plans accordingly.
+        </li>
+      </ol>
+
+      <h3>Additional Good Practices</h3>
+      <ul>
+        <li>Maintain clean and comfortable housing to reduce stress and infections.</li>
+        <li>Implement regular health checks and vaccinations.</li>
+        <li>Keep records of feeding, breeding, and milk yields to track progress and plan improvements.</li>
+        <li>Train farm workers on best milking and feeding techniques.</li>
+      </ul>
+
+      <p>
+        By following these steps, farmers can sustainably improve fodder quality and availability, ensuring cows receive balanced nutrition year-round, leading to enhanced milk production and farm profitability.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function toggleReadMore(sectionNumber) {
+      const btn = document.querySelector(`.read-more-toggle[onclick="toggleReadMore(${sectionNumber})"]`);
+      const content = document.getElementById(`readmore-${sectionNumber}`);
+      const isOpen = content.classList.contains("open");
+
+      if (isOpen) {
+        content.classList.remove("open");
+        content.setAttribute("aria-hidden", "true");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Read More";
+      } else {
+        content.classList.add("open");
+        content.setAttribute("aria-hidden", "false");
+        btn.setAttribute("aria-expanded", "true");
+        btn.textContent = "Read Less";
+      }
+    }
+  </script>
+  <footer style="background:#014d00; color:#eee; padding:8px 0; font-size:0.78rem;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 92%; margin: auto; gap: 10px;">
+
+<!-- Meta SEO Tags -->
+<meta name="description" content="AERO DAIRY is a modern, sustainable dairy education and training platform offering programs in dairy farming, milk processing, animal health and more in Kenya.">
+<meta name="keywords" content="AERO DAIRY, Dairy Farming, Milk Production, Animal Health, Dairy Technology, Kenya Dairy Education">
+<meta name="author" content="AERO DAIRY Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aerodairy.co.ke/" />
+
+    <!-- Quick Links Left -->
+    <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+      <a href="index.html" style="color:#eee; text-decoration:none;"><i class="fas fa-home"></i> Home</a>
+      <a href="report.html" style="color:#eee; text-decoration:none;"><i class="fas fa-chart-line"></i> Report</a>
+      <a href="admission.html" style="color:#eee; text-decoration:none;"><i class="fas fa-user-graduate"></i> Admissions</a>
+      <a href="permits.html" style="color:#eee; text-decoration:none;"><i class="fas fa-id-badge"></i> Permits</a>
+      <a href="resources.html" style="color:#eee; text-decoration:none;"><i class="fas fa-box-open"></i> Resources</a>
+      <a href="programs.html" style="color:#eee; text-decoration:none;"><i class="fas fa-book-open"></i> Programs</a>
+      <a href="contact.html" style="color:#eee; text-decoration:none;"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="about.html" style="color:#eee; text-decoration:none;"><i class="fas fa-circle-info"></i> About</a>
+      <a href="logout.html" style="color:#eee; text-decoration:none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <!-- Socials Right -->
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <span><i class="fab fa-facebook"></i> Facebook – @aerodairykenya</span>
+      <span><i class="fab fa-twitter"></i> Twitter – @aerodairyke</span>
+      <span><i class="fab fa-instagram"></i> Instagram – @aerodairy_official</span>
+      <span><i class="fab fa-youtube"></i> YouTube – AERO DAIRY</span>
+      <span><i class="fab fa-whatsapp"></i> WhatsApp – +254 719 594 705</span>
+      <span><i class="fab fa-tiktok"></i> TikTok – @aerodairy_ke</span>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center; margin-top:4px; font-size:0.72rem; color:#ccc;">
+    © 2025 AERO DAIRY. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
